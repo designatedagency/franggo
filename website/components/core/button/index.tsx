@@ -1,0 +1,37 @@
+import React, { FC } from "react";
+import { createClassName } from "../../../lib/helpers/react-helpers";
+
+type ButtonProps = {
+    variant: "primary" | "secondary" | "tertiary" | "unstyled";
+    loading?: boolean | undefined;
+}
+
+export const Button: FC<ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
+    const { variant, loading, ...filteredProps } = props;
+
+    const variantClassNames = props.variant === "primary" ?
+        // Primary
+        `bg-purple-500 text-white shadow border-black border border-opacity-10 hover:brightness-110 active:brightness-110` :
+        props.variant === "secondary" ?
+            // Secondary
+            `text-black shadow border-black border border-opacity-10 hover:bg-gray-50 active:bg-gray-50` :
+            // Tertiary
+            props.variant === "tertiary" ?
+                `text-purple-500 text-sm font-normal border-none py-0 hover:brightness-110 active:brightness-110` :
+                // unstyled
+                `text-black text-sm font-normal border-none py-0 hover:brightness-110 active:brightness-110`;
+
+    return (
+        <button
+            {...filteredProps}
+            disabled={props.disabled || props.loading}
+            className={createClassName(props, `flex select-none items-center justify-center disabled:opacity-50 px-3 py-2 rounded-lg font-bold w-full focus:outline-1 focus:outline-gray-300 transition-all ${variantClassNames}`)}
+        >
+            {/* Loading icon */}
+            {props.loading ? <img alt="loading" src="/ui/loader-round.svg" className="w-6 h-6 mr-2 invert" /> : null}
+
+            {/* Children */}
+            {props.children}
+        </button>
+    )
+}
