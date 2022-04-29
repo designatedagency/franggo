@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "8vi169lv",
+    "projectId": "i34ufiqg",
     "dataset": "production"
   },
   "project": {
-    "name": "Project Name"
+    "name": "Franggo"
   },
   "plugins": [
     "@sanity/base",
@@ -35,6 +35,14 @@
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
       "path": "./plugins/resolveProductionUrl.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./styles/style.css"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./styles/myLogo.js"
     }
   ]
 }

@@ -1,7 +1,7 @@
 export default {
     name: "portableText",
     type: "array",
-    title: "Content",
+    title: "Rich text",
     of: [
         {
             type: "block",

@@ -1,6 +1,6 @@
 export default {
     name: "youtubeVimeoBlock",
-    title: "youtubeVimeoBlock",
+    title: "YouTube or Vimeo",
     type: "object",
 
     fields: [
@@ -10,4 +10,4 @@ export default {
             type: "string",
         },
     ],
-};
+}
