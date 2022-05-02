@@ -11,6 +11,12 @@ export default {
             type: "string",
         },
         {
+            name: "image",
+            title: "Restaurant image",
+            description: "Image for the restaurant",
+            type: "image",
+        },
+        {
             name: "street",
             title: "Street",
             description: "Street name for the restaurant",

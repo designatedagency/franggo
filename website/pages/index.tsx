@@ -12,9 +12,11 @@ import { RichText } from "../components/core/rich-text"
 import { Meta } from "../components/core/meta"
 import { Footer } from "../components/core/footer"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
+import { Location } from "../lib/types/types/location.type"
 
 type PageProps = {
   page: HomePage
+  locations: Location[]
 }
 
 export default function Home(props: SanityNextStaticProps<PageProps>) {
@@ -28,6 +30,8 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Meta tags={data.page.meta} />
 
       <Header />
+
+
 
       <Footer />
 
@@ -44,6 +48,10 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       queries: {
         page: {
           groq: `*[_type == "home"]`
+        },
+        locations: {
+          groq: `*[_type == "location"]`,
+          expectArray: true
         }
       }
     }),
