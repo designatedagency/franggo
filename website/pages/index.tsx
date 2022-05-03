@@ -15,6 +15,7 @@ import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSani
 import { Location } from "../lib/types/types/location.type"
 import { Hero } from "../components/hero"
 import { DoubleBlock } from "../components/doubleBlock"
+import { CTA } from "../components/cta"
 import { Locaties } from "../components/locaties"
 
 type PageProps = {
@@ -36,6 +37,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Hero />
       <DoubleBlock />
       <Locaties />
+      <CTA />
 
       <Footer />
 
