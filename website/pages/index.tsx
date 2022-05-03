@@ -1,26 +1,21 @@
-import React from "react"
-import Link from "next/link"
 import { GetStaticPropsContext } from "next"
+import Link from "next/link"
+import React from "react"
 import { Button } from '../components/core/button'
-import { Header } from '../components/core/header'
-import { Input } from '../components/core/input'
-import { TextArea } from '../components/core/textarea'
-import { strings } from '../lib/constants/languages/strings'
-import { setLanguage } from '../lib/helpers/language-helpers'
-import { HomePage } from "../lib/types/pages/home-page.type"
-import { RichText } from "../components/core/rich-text"
-import { Meta } from "../components/core/meta"
 import { Footer } from "../components/core/footer"
-import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
-import { Location } from "../lib/types/types/location.type"
-import { Hero } from "../components/hero"
-import { DoubleBlock } from "../components/doubleBlock"
+import { Header } from '../components/core/header'
+import { Meta } from "../components/core/meta"
 import { CTA } from "../components/cta"
+import { DoubleBlock } from "../components/doubleBlock"
+import { Hero } from "../components/hero"
 import { Locaties } from "../components/locaties"
+import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
+import { HomePage } from "../lib/types/pages/home-page.type"
+import { LocationType } from "../lib/types/types/location.type"
 
 type PageProps = {
   page: HomePage
-  locations: Location[]
+  locations: LocationType[]
 }
 
 export default function Home(props: SanityNextStaticProps<PageProps>) {
