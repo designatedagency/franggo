@@ -34,9 +34,10 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Header />
       <Hero />
       <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
+      <Menu menuGroups={props.data.menuGroups} />
       <Locaties locations={props.data.locations} />
       <CTA ctaBlock={data.page.ctaBlock} />
-      <Menu menuGroups={props.data.menuGroups} />
+
       <Footer />
 
       {/* Exit preview button */}

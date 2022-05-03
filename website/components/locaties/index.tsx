@@ -12,7 +12,7 @@ export const Locaties: FC<{
     return (
         <div {...filteredProps} className={createClassName(props, "flex flex-col items-center justify-center bg-franggo-orange relative")}>
             <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />
-            <div className="w-full max-w-page flex justify-start px-8">
+            <div className="w-full max-w-page flex justify-start pt-8 px-8">
                 <img className="h-[80px]" src="/locaties-text.svg" />
             </div>
             <div className="w-full max-w-page p-8 z-10">
