@@ -21,16 +21,16 @@ export const Menu: FC<{
                 <div className=" p-0 md:p-8 grid grid-cols-1  gap-8">
                     {menuGroups?.map((menuGroup, i) => {
                         return (
-                            <div className="flex w-full gap-8 items-center justify-end border-b border-black pb-8">
+                            <div key={i} className="flex w-full gap-8 items-center justify-end border-b border-black pb-8">
 
                                 <div className="flex flex-col sm:flex-row w-full gap-12 justify-start items-start sm:items-center">
                                     <div className="flex flex-col gap-4">
                                         <p className=" text-center font-bold text-xl font-heading whitespace-nowrap">{menuGroup.title}</p>
                                         <img className="w-[150px] h-[150px] max-w-none object-cover" src={imageUrlFor(menuGroup.image)} /></div>
                                     <div className="flex flex-col gap-4 w-full">
-                                        {menuGroup.menuItems.map((menuItem) => {
+                                        {menuGroup.menuItems.map((menuItem, i) => {
                                             return (
-                                                <div className="flex flex-col md:flex-row justify-between gap-2 md:gap-8 items-start md:items-center ">
+                                                <div key={i} className="flex flex-col md:flex-row justify-between gap-2 md:gap-8 items-start md:items-center ">
                                                     <h4 className="text-3xl">{menuItem.title}</h4>
                                                     <p className="font-heading text-xl whitespace-nowrap">€ {menuItem.price}</p>
                                                 </div>
