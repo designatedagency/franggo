@@ -35,7 +35,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
 
       <Header />
       <Hero />
-      <DoubleBlock />
+      <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
       <Locaties />
       <CTA />
 
