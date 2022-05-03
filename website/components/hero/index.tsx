@@ -12,7 +12,6 @@ export const Hero: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = (props) => {
                     <img className="animate-spin-slow w-[200px] object-contain absolute left-0 bottom-0" src="/scrolldown.svg" />
                 </div>
             </div>
-
         </div>
     )
 }

@@ -7,13 +7,15 @@ import { RichText } from "../core/rich-text";
 
 export const DoubleBlock: FC<{
     doubleBlock?: DoubleBlockType;
+    backgroundPattern?: boolean;
 } & React.HtmlHTMLAttributes<HTMLDivElement>> = (props) => {
 
-    const { doubleBlock, ...filteredProps } = props;
+    const { doubleBlock, backgroundPattern, ...filteredProps } = props;
 
     return (
-        <div {...filteredProps} className={createClassName(props, "flex justify-center bg-franggo-orange relative")}>
-            <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />
+        <div {...filteredProps} className={createClassName(props, `flex justify-center ${backgroundPattern ? `bg-[url(/tiles.svg)] bg-repeat-x bg-cover bg-top` : `bg-franggo-orange`}  relative`)}>
+            {backgroundPattern ? null : <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />}
+
             <div className="w-full max-w-page p-8 z-10">
                 <div className="bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="flex flex-col gap-8 justify-between">
@@ -23,7 +25,7 @@ export const DoubleBlock: FC<{
                         </div>
                         <div className="flex flex-col gap-8 h-fit">
                             <RichText richText={doubleBlock?.text} />
-                            <a href={doubleBlock?.url} rel="noreferrer" target={doubleBlock?.url.includes("http") ? "_blank" : "_self"}><Button className="w-fit" variant="secondary">{doubleBlock?.label}</Button></a>
+                            {doubleBlock?.label ? <a href={doubleBlock?.url} rel="noreferrer" target={doubleBlock?.url?.includes("http") ? "_blank" : "_self"}><Button className="w-fit" variant="secondary">{doubleBlock?.label}</Button></a> : null}
                         </div>
 
                     </div>
@@ -32,7 +34,7 @@ export const DoubleBlock: FC<{
                     </div>
                 </div>
             </div>
-            <img className="h-full w-auto absolute top-0 right-0 bottom-0" src="/graphic/right.svg" />
+            {backgroundPattern ? null : <img className="h-full w-auto absolute top-0 right-0 bottom-0" src="/graphic/right.svg" />}
 
         </div>
     )

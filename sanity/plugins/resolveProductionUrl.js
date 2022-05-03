@@ -1,7 +1,7 @@
 const previewSecret = "ihjsviaufoweacosifhkoifjndsadoiafmnqadk"
 
 // Replace `remoteUrl` with your deployed Next.js site
-const remoteUrl = `https://nextjs-wearemiles.vercel.app`
+const remoteUrl = `https://franggo.vercel.app`
 const localUrl = `http://localhost:3000`
 
 export const translateSchemaTypeToNextUrl = (document) => {
@@ -9,8 +9,9 @@ export const translateSchemaTypeToNextUrl = (document) => {
     switch (document._type) {
         case "home":
             return `/`
-        case "about":
-            return `/about-us`
+        case "menu":
+            return `/menu`
+
         case "newsItem":
             return `/news/${document.slug?.current}`
     }
