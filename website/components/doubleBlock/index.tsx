@@ -23,8 +23,7 @@ export const DoubleBlock: FC<{
                         </div>
                         <div className="flex flex-col gap-8 h-fit">
                             <RichText richText={doubleBlock?.text} />
-                            <a href={doubleBlock?.url} rel="norefferer" target={doubleBlock?.url.includes("http") ? "_blank" : "_self"}><Button className="w-fit" variant="secondary">{doubleBlock?.label}</Button></a>
-
+                            <a href={doubleBlock?.url} rel="noreferrer" target={doubleBlock?.url.includes("http") ? "_blank" : "_self"}><Button className="w-fit" variant="secondary">{doubleBlock?.label}</Button></a>
                         </div>
 
                     </div>
