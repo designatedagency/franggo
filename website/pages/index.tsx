@@ -9,13 +9,16 @@ import { CTA } from "../components/cta"
 import { DoubleBlock } from "../components/doubleBlock"
 import { Hero } from "../components/hero"
 import { Locaties } from "../components/locaties"
+import { Menu } from "../components/menu"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
 import { HomePage } from "../lib/types/pages/home-page.type"
 import { LocationType } from "../lib/types/types/location.type"
+import { MenuGroupType } from "../lib/types/types/menu-group.type"
 
 type PageProps = {
   page: HomePage
   locations: LocationType[]
+  menuGroups: MenuGroupType[]
 }
 
 export default function Home(props: SanityNextStaticProps<PageProps>) {
@@ -33,7 +36,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
       <Locaties locations={props.data.locations} />
       <CTA ctaBlock={data.page.ctaBlock} />
-
+      <Menu menuGroups={props.data.menuGroups} />
       <Footer />
 
       {/* Exit preview button */}
@@ -52,6 +55,10 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         },
         locations: {
           groq: `*[_type == "location"]`,
+          expectArray: true
+        },
+        menuGroups: {
+          groq: `*[_type == "menuGroup"]`,
           expectArray: true
         }
       }

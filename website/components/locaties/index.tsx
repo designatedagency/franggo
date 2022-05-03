@@ -11,7 +11,7 @@ export const Locaties: FC<{
 
     return (
         <div {...filteredProps} className={createClassName(props, "flex flex-col items-center justify-center bg-franggo-orange relative")}>
-            <img className="h-full w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />
+            <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />
             <div className="w-full max-w-page flex justify-start px-8">
                 <img className="h-[80px]" src="/locaties-text.svg" />
             </div>
@@ -23,7 +23,7 @@ export const Locaties: FC<{
                                 <img className="w-full" src="https://s3-alpha-sig.figma.com/img/f960/4325/8f8ad64015b7096c4239b993fbb8d6c1?Expires=1652659200&Signature=CvdmJZBTQ6cFst-VpMajYwDO9Ur4pYrqI-8zfIEXw~S2qnI4R~f6mzSyknqEerVad9SnPjTc6haX0c8uy286upTZJtdbJMVkPEMaXrZZV58yL~oDxxpK10ckWfguFjB0wnBm1VJ-nzRNcKwugRs3kbWd5qpfaWrVk8y8bRCmzTDH049IHrA6H-4WLgeeOwQCVZhnUnnN21pwd7kiQKT6AMrchuR6urnFyeWuHJ562ivZFlBIZWWfKor1ulNHyMQ0R0v0xq0g8aVZMxio4ybs5ebTFHNKFWnEEjN9OEZ-os9kRmTasHV9rnf0AcdzEm~sAyp5-KLmeDAssgkg30uikg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
                                 <div className="flex flex-col gap-4">
                                     <p className="uppercase font-heading">Restaurant</p>
-                                    <div className="flex flex-row w-full justify-between items-center">
+                                    <div className="flex flex-col sm:flex-row w-full justify-between gap-4 items-start sm:items-center">
                                         <h3 className="font-medium">{location.title}</h3>
                                         <div className="flex flex-row gap-4">
                                             <Button variant="secondary">Meer info</Button>

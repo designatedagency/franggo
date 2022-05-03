@@ -13,7 +13,7 @@ export const DoubleBlock: FC<{
 
     return (
         <div {...filteredProps} className={createClassName(props, "flex justify-center bg-franggo-orange relative")}>
-            <img className="h-full w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />
+            <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />
             <div className="w-full max-w-page p-8 z-10">
                 <div className="bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="flex flex-col gap-8 justify-between">
