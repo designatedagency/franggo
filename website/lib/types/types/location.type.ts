@@ -1,6 +1,6 @@
 import { SanityAsset } from "@sanity/asset-utils";
 
-export type Location = {
+export type LocationType = {
     title: string;
     image: SanityAsset;
     street: string;
