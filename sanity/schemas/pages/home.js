@@ -50,12 +50,13 @@ export default {
             group: "hero",
         },
         {
-            name: "subtitle",
-            title: "Subtitle",
-            description: "Subtitle to use in the hero of the page",
-            type: "text",
+            name: "bgImage",
+            title: "Background image",
+            description: "Background image to use in the hero of the page",
+            type: "image",
             group: "hero",
         },
+
         // about us
         {
             name: "textAndImageBlock",

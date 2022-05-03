@@ -3,3 +3,40 @@
 @tailwind utilities;
 @import "../components/core/rich-text/index.scss";
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@400;700&family=Poppins&display=swap');
+
+//font sizes
+h1 {
+    @apply font-heading font-bold text-4xl leading-tight;
+
+    @screen md {
+        @apply text-5xl leading-tight;
+    }
+}
+
+h2 {
+    @apply font-heading font-bold text-xl leading-tight;
+
+    @screen md {
+        @apply text-2xl leading-tight;
+    }
+}
+
+h3 {
+    @apply font-heading font-bold text-lg leading-tight;
+
+    @screen md {
+        @apply text-xl leading-tight;
+    }
+}
+
+h4 {
+    @apply font-heading font-bold text-base leading-tight;
+
+    @screen md {
+        @apply text-lg leading-tight;
+    }
+}
+
+p {
+    @apply font-body;
+}

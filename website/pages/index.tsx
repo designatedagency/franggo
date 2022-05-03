@@ -13,6 +13,8 @@ import { Meta } from "../components/core/meta"
 import { Footer } from "../components/core/footer"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
 import { Location } from "../lib/types/types/location.type"
+import { Hero } from "../components/hero"
+import { DoubleBlock } from "../components/doubleBlock"
 
 type PageProps = {
   page: HomePage
@@ -30,8 +32,8 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Meta tags={data.page.meta} />
 
       <Header />
-
-
+      <Hero />
+      <DoubleBlock />
 
       <Footer />
 

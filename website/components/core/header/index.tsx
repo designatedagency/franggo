@@ -1,4 +1,4 @@
-import { Squash as Hamburger } from 'hamburger-react'
+import { Cross as Hamburger } from 'hamburger-react'
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import React, { FC, useEffect, useState } from "react";
@@ -32,7 +32,7 @@ export const Header: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = (props) => {
     useEffect(() => { setReady(true) }, []);
 
     return (
-        <header className={createClassName(props, "sticky top-0 z-10 w-[100%] sm:py-4  bg-black ")}>
+        <header className={createClassName(props, "sticky top-0 z-20 w-[100%] sm:py-4  bg-black ")}>
             <img src='/decor.svg' className='w-full h-[82px] object-cover absolute right-0 top-0 left-0 bottom-0' />
             <div className="flex flex-col justify-between select-none p-4 mx-auto max-w-page z-10 relative  sm:py-0 sm:px-4 md:flex-row">
 
