@@ -11,9 +11,6 @@ export const translateSchemaTypeToNextUrl = (document) => {
             return `/`
         case "menu":
             return `/menu`
-
-        case "newsItem":
-            return `/news/${document.slug?.current}`
     }
 }
 
