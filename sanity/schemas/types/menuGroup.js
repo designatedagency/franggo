@@ -24,5 +24,12 @@ export default {
             type: "array",
             of: [{ type: "menuItem" }],
         },
+        {
+            name: "supplements",
+            title: "Supplements",
+            description: "Supplements for the menu group",
+            type: "array",
+            of: [{ type: "string" }],
+        },
     ],
 }
