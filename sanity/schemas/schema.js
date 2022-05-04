@@ -28,6 +28,7 @@ import faqItem from "./utils/faqItem"
 import faq from "./pages/faq"
 import allergies from "./pages/allergies"
 import navItem from "./utils/navItem"
+import contactBlock from "./utils/contactBlock"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -50,6 +51,7 @@ export default createSchema({
         careerItem,
         faqItem,
         navItem,
+        contactBlock,
 
         // pages
         home,

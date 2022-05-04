@@ -21,7 +21,7 @@ export const Menu: FC<{
                 <div className=" p-0 md:p-8 grid grid-cols-1  gap-8">
                     {menuGroups?.map((menuGroup, i) => {
                         return (
-                            <div key={i} className="flex w-full gap-8 items-center justify-end border-b border-black pb-8">
+                            <div key={i} className="flex flex-col w-full gap-8 items-center justify-end border-b border-black pb-8">
 
                                 <div className="flex flex-col sm:flex-row w-full gap-12 justify-start items-start sm:items-center">
                                     <div className="flex flex-col gap-4">
@@ -38,6 +38,16 @@ export const Menu: FC<{
                                         })}
                                     </div>
                                 </div>
+                                {menuGroup.supplements ?
+                                    <div className="w-full h-full p-8 bg-franggo-green text-white">
+                                        <h2 className="mb-5">Supplement Choice</h2>
+                                        {menuGroup.supplements.map((supplement, i) => {
+                                            return (
+                                                <h3 className="mb-1 font-medium" key={i}>{supplement}</h3>
+                                            )
+                                        })}
+                                    </div>
+                                    : null}
                             </div>
                         )
                     })}

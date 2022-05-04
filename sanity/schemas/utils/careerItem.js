@@ -20,7 +20,7 @@ export default {
             name: "hours",
             title: "Job hours",
             description: "Amount of hours for the job",
-            type: "number",
+            type: "string",
         },
         {
             name: "url",

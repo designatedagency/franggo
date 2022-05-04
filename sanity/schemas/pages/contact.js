@@ -11,6 +11,10 @@ export default {
             name: "hero",
             title: "Hero",
         },
+        {
+            name: "contactBlocks",
+            title: "Contact Blocks",
+        },
     ],
     fields: [
         // SEO
@@ -21,18 +25,6 @@ export default {
             type: "meta",
             group: "seo",
         },
-        {
-            name: "slug",
-            title: "Slug",
-            description: "Slug to use for the page",
-            type: "slug",
-            options: {
-                source: "title",
-                maxLength: 200, // will be ignored if slugify is set
-                slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
-            },
-        },
-        // hero
 
         {
             name: "title",
@@ -48,5 +40,20 @@ export default {
             type: "text",
             group: "hero",
         },
+        {
+            name: "bgImage",
+            title: "Background image",
+            description: "Background image to use in the hero of the page",
+            type: "image",
+            group: "hero",
+        },
+        {
+            name: "contactBlocks",
+            title: "Contact Blocks",
+            type: "array",
+            of: [{ type: "contactBlock" }],
+            group: "contactBlocks",
+        },
+
     ],
 }

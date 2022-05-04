@@ -12,6 +12,8 @@ module.exports = {
             colors: {
                 franggo: {
                     orange: "#F37524",
+                    green: "#73C95E",
+                    blue: "#284193",
                 },
             },
             maxWidth: {

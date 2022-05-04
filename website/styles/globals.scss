@@ -40,3 +40,80 @@ h4 {
 p {
     @apply font-body;
 }
+
+//details
+details {
+    user-select: none;
+
+    summary {
+        position: relative;
+        cursor: pointer;
+        list-style: none;
+        outline: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::marker {
+            display: none;
+        }
+
+        &:after {
+            position: absolute;
+            transition: transform 0.2s ease;
+            top: 50%;
+            right: 0;
+            content: '';
+            background: url(../public/icons/arrow-down-black.svg);
+            width: 14px;
+            height: 7px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+}
+
+details[open] {
+    user-select: none;
+
+    summary {
+        position: relative;
+        cursor: pointer;
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::marker {
+            display: none;
+        }
+
+        &:after {
+            position: absolute;
+            transition: transform 0.2s ease;
+            right: 0;
+            top: 50%;
+            background: url(../public/icons/arrow-down-black.svg);
+            width: 14px;
+            height: 7px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.react-pdf__Document {
+    height: 100% !important;
+    // overflow-y: scroll;
+    overflow: hidden;
+}
+
+.react-pdf__Page__canvas {
+    margin: 0 auto;
+    width: 100% !important;
+    height: 100% !important;
+}

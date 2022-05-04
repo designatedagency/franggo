@@ -5,16 +5,19 @@ import { Button } from "../core/button";
 
 export const Locaties: FC<{
     locations?: LocationType[];
+    hideText?: boolean;
 } & React.HtmlHTMLAttributes<HTMLDivElement>> = (props) => {
 
-    const { locations, ...filteredProps } = props;
+    const { locations, hideText, ...filteredProps } = props;
 
     return (
         <div {...filteredProps} className={createClassName(props, "flex flex-col items-center justify-center bg-franggo-orange relative")}>
             <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />
-            <div className="w-full max-w-page flex justify-start pt-8 px-8">
-                <img className="h-[80px]" src="/locaties-text.svg" />
-            </div>
+            {!hideText ?
+                <div className="w-full max-w-page flex justify-start pt-8 px-8">
+                    <img className="h-[80px]" src="/locaties-text.svg" />
+                </div>
+                : null}
             <div className="w-full max-w-page p-8 z-10">
                 <div className="bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {locations?.map((location, i) => {

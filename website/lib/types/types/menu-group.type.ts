@@ -5,4 +5,5 @@ export type MenuGroupType = {
     title: string;
     image: SanityAsset;
     menuItems: MenuItemType[];
+    supplements?: string[];
 }

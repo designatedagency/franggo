@@ -30,19 +30,6 @@ export default {
             group: "seo",
         },
         {
-            name: "slug",
-            title: "Slug",
-            description: "Slug to use for the page",
-            type: "slug",
-            options: {
-                source: "title",
-                maxLength: 200, // will be ignored if slugify is set
-                slugify: (input) => input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
-            },
-        },
-        // hero
-
-        {
             name: "logo",
             title: "Logo",
             description: "Logo to use in the hero of the page",
