@@ -8,6 +8,7 @@ import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
 import { CTA } from "../components/cta"
 import { DoubleBlock } from "../components/doubleBlock"
+import { Formitable } from "../components/formitable"
 import { Hero } from "../components/hero"
 import { Locaties } from "../components/locaties"
 import { Menu } from "../components/menu"
@@ -35,6 +36,7 @@ export default function AboutPage(props: SanityNextStaticProps<PageProps>) {
             <Meta tags={data.page?.meta} />
 
             <Header />
+            <Formitable />
 
             <SmallHero title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
 

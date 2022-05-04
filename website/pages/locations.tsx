@@ -7,6 +7,7 @@ import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
 import { DoubleBlock } from "../components/doubleBlock"
+import { Formitable } from "../components/formitable"
 import { Locaties } from "../components/locaties"
 import { SmallHero } from "../components/smallHero"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
@@ -30,6 +31,7 @@ export default function Locations(props: SanityNextStaticProps<PageProps>) {
             <Meta tags={data.page?.meta} />
 
             <Header />
+            <Formitable />
 
             <SmallHero title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
 

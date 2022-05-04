@@ -66,7 +66,7 @@ export const Header: FC<{
                     <Link href="/about">
                         <p className={`transition-all text-3xl lg:text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer ${router.pathname === "/about" ? " text-franggo-orange " : "text-white"}`}>About us</p >
                     </Link>
-                    <Link href="/career">
+                    {/* <Link href="/career">
                         <p className={`transition-all text-3xl lg:text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer ${router.pathname === "/career" ? " text-franggo-orange " : "text-white"}`}>Career</p >
                     </Link>
                     <Link href="/faq">
@@ -74,7 +74,7 @@ export const Header: FC<{
                     </Link>
                     <Link href="/allergies">
                         <p className={`transition-all text-3xl lg:text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer ${router.pathname === "/allergies" ? " text-franggo-orange " : "text-white"}`}>Allergies</p >
-                    </Link>
+                    </Link> */}
                     <Link href="/contact">
                         <p className={`transition-all text-3xl lg:text-xl font-heading font-medium hover:text-franggo-orange cursor-pointer ${router.pathname === "/contact" ? "text-franggo-orange" : "text-white"}`}>Contact</p >
                     </Link>
@@ -99,8 +99,9 @@ export const Header: FC<{
                             </Button>
                         </a>
 
-                        {/* ADD FORMITABLE A HREF TODO */}
-                        <Button className="w-auto text-3xl " variant="primary">Reserveren</Button>
+                        <a href="#ft-open">
+                            <Button className="w-auto text-3xl " variant="primary">Reserveren</Button>
+                        </a>
                     </div>
 
                 </div>
@@ -115,8 +116,9 @@ export const Header: FC<{
                             </p>
                         </Button>
                     </a>
-                    {/* ADD FORMITABLE A HREF TODO */}
-                    <Button className="w-auto text-xl" variant="primary">Reserveren</Button>
+                    <a href="#ft-open">
+                        <Button className="w-auto text-xl" variant="primary">Reserveren</Button>
+                    </a>
                 </div>
             </div>
         </header>

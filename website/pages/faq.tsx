@@ -10,6 +10,7 @@ import { JobBlock } from "../components/core/jobBlock"
 import { Meta } from "../components/core/meta"
 import { DoubleBlock } from "../components/doubleBlock"
 import { FaqItem } from "../components/faqItem"
+import { Formitable } from "../components/formitable"
 import { Locaties } from "../components/locaties"
 import { SmallHero } from "../components/smallHero"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
@@ -36,13 +37,11 @@ export default function Faq(props: SanityNextStaticProps<PageProps>) {
             <Meta tags={data.page?.meta} />
 
             <Header />
-
+            <Formitable />
             <SmallHero title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
 
-            <div className="flex flex-col gap-5 p-4 md:p-8">
-                <img className="max-w-page w-full mx-auto  hidden md:block md:px-8" src="/faq-block/top-divider.svg" />
-                <img className="max-w-page w-full mx-auto  md:hidden" src="/faq-block/top-mobile.svg" />
-                <div className="max-w-page mx-auto w-full md:px-10 lg:px-20">
+            <Block small>
+                <div className="max-w-page mx-auto py-20 w-full">
                     {data.page.faqs?.map((faq, i) => {
                         return (
                             <div key={i}>
@@ -56,9 +55,7 @@ export default function Faq(props: SanityNextStaticProps<PageProps>) {
                         )
                     })}
                 </div>
-                <img className="max-w-page w-full mx-auto  hidden md:block md:px-8" src="/faq-block/bottom-divider.svg" />
-                <img className="max-w-page w-full mx-auto  md:px-8 md:hidden" src="/faq-block/bottom-mobile.svg" />
-            </div>
+            </Block>
 
             <Footer />
 

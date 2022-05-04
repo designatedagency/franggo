@@ -4,12 +4,14 @@ import React, { FC } from "react";
 import { createClassName } from "../../../lib/helpers/react-helpers";
 import { imageUrlFor } from "../../../lib/helpers/sanity-helpers";
 import { GlobalType } from "../../../lib/types/base/global.type";
+import { LocationType } from "../../../lib/types/types/location.type";
 
 export const Footer: FC<{
     global?: GlobalType;
+    locations?: LocationType[];
 } & React.HtmlHTMLAttributes<HTMLDivElement>> = (props) => {
 
-    const { global, ...filteredProps } = props;
+    const { global, locations, ...filteredProps } = props;
 
     const router = useRouter();
 
@@ -51,9 +53,38 @@ export const Footer: FC<{
                         </Link>
                     </div>
 
-                    <div className="flex flex-col gap-2" >
-                        <p className="font-heading text-2xl text-white uppercase">Locaties</p>
-                        <p className="transition-all text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer text-white">Menu</p>
+                    {/* TODO  */}
+                    <div className="flex flex-col gap-2 text-white">
+                        <p className="font-heading text-2xl uppercase">Locaties</p>
+
+                        {props.locations?.map((location, i) => {
+                            return (
+                                <div key={i} className="flex flex-col gap-2">
+                                    <p className="font-bold">{location.title}</p>
+                                    <div>
+                                        <p>{location.street}</p>
+                                        <p>{location.zip}</p>
+                                    </div>
+                                    <div>
+                                        {/* opening times is not a string[]! */}
+                                        {/* <p>{location.openingTimes.map((time, i) => {
+                                            return (
+                                                <p key={i}>{time}</p>
+                                            )
+                                        })}</p> */}
+                                    </div>
+                                    <div>
+                                        <a className="hover:text-franggo-orange transition-all" href={`tel: ${location?.phone}`}>
+                                            <p>{location?.phone}</p>
+                                        </a>
+                                        <a className="hover:text-franggo-orange transition-all" href={`mailto: ${location?.email}`}>
+                                            <p>{location?.email}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            )
+                        })}
+
                     </div>
 
                 </div>

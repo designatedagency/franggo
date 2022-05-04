@@ -27,7 +27,9 @@ export const CTA: FC<{
                                             <h4 className="font-medium">{ctaItem.title}</h4>
                                         </div>
                                         <p>{ctaItem.description}</p>
-                                        <Button variant="primary">Reserveren</Button>
+                                        <a href="#ft-open">
+                                            <Button variant="primary">Reserveren</Button>
+                                        </a>
                                     </div>
                                 )
                             })}

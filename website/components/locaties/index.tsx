@@ -30,7 +30,9 @@ export const Locaties: FC<{
                                         <h3 className="font-medium">{location.title}</h3>
                                         <div className="flex flex-row gap-4">
                                             <Button variant="secondary">Meer info</Button>
-                                            <Button variant="primary">Reserveren</Button>
+                                            <a href="#ft-open">
+                                                <Button variant="primary">Reserveren</Button>
+                                            </a>
                                         </div>
                                     </div>
                                     <div>

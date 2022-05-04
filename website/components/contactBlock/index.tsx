@@ -13,7 +13,7 @@ export const ContactBlock: FC<{
     return (
         <div {...filteredProps} className={createClassName(props, `relative`)}>
 
-            <div className={`w-full max-w-page z-10`}>
+            <div className={`w-full max-w-page mx-auto z-10`}>
                 <div className="p-8 gap-4 grid grid-cols-1 md:grid-cols-2 md:gap-8">
 
                     <div className="md:hidden">

@@ -19,6 +19,7 @@ import { MenuGroupType } from "../lib/types/types/menu-group.type"
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from "react-pdf";
 import { assetUrlFor } from "../lib/helpers/sanity-helpers"
+import { Formitable } from "../components/formitable"
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 type PageProps = {
@@ -44,6 +45,7 @@ export default function Allergies(props: SanityNextStaticProps<PageProps>) {
             <Meta tags={data.page?.meta} />
 
             <Header />
+            <Formitable />
 
             <SmallHero title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
 
@@ -56,7 +58,7 @@ export default function Allergies(props: SanityNextStaticProps<PageProps>) {
                         <p className="mb-10">{data.page.description}</p>
 
                         {data.page.file ?
-                            <div className="w-full lg:max-w-[50vw] mx-auto">
+                            <div className="w-full mx-auto">
                                 <Document
                                     file={assetUrlFor(data.page.file)}
                                     onLoadSuccess={onDocumentLoadSuccess}

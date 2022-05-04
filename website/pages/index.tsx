@@ -7,6 +7,7 @@ import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
 import { CTA } from "../components/cta"
 import { DoubleBlock } from "../components/doubleBlock"
+import { Formitable } from "../components/formitable"
 import { Hero } from "../components/hero"
 import { Locaties } from "../components/locaties"
 import { Menu } from "../components/menu"
@@ -31,7 +32,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
     <div>
 
       <Meta tags={data.page.meta} />
-
+      <Formitable />
       <Header global={data.global} />
       <Hero />
       <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
@@ -39,7 +40,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Locaties locations={props.data.locations} />
       <CTA ctaBlock={data.page.ctaBlock} />
 
-      <Footer global={data.global} />
+      <Footer locations={props.data.locations} global={data.global} />
 
       {/* Exit preview button */}
       {props.preview && <Link locale={false} href="/api/exit-preview"><Button variant={"primary"} className="fixed bottom-5 right-5 w-fit">Exit preview</Button></Link>}
