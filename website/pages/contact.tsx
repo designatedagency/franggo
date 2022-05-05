@@ -1,22 +1,18 @@
 import { GetStaticPropsContext } from "next"
 import Link from "next/link"
 import React from "react"
-import { Block } from "../components/core/block"
 import { Button } from '../components/core/button'
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
-import { DoubleBlock } from "../components/doubleBlock"
 import { Formitable } from "../components/formitable"
 import { Locaties } from "../components/locaties"
 import { SmallHero } from "../components/smallHero"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
 import { GlobalType } from "../lib/types/base/global.type"
-import { AboutPageType } from "../lib/types/pages/about-page.type"
 import { ContactPageType } from "../lib/types/pages/contact-page.type"
 import { LocationType } from "../lib/types/types/location.type"
 import { MenuGroupType } from "../lib/types/types/menu-group.type"
-import Locations from "./locations"
 
 type PageProps = {
     page: ContactPageType;

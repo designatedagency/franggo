@@ -1,26 +1,21 @@
 import { GetStaticPropsContext } from "next"
 import Link from "next/link"
 import React, { useState } from "react"
-import { Block } from "../components/core/block"
+// react pdf
+import { Document, Page, pdfjs } from 'react-pdf'
 import { Button } from '../components/core/button'
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
-import { DoubleBlock } from "../components/doubleBlock"
-import { Locaties } from "../components/locaties"
+import { Formitable } from "../components/formitable"
 import { SmallHero } from "../components/smallHero"
+import { assetUrlFor } from "../lib/helpers/sanity-helpers"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
-import { AboutPageType } from "../lib/types/pages/about-page.type"
+import { GlobalType } from "../lib/types/base/global.type"
 import { AllergiesPageType } from "../lib/types/pages/allergies-page.type"
 import { LocationType } from "../lib/types/types/location.type"
 import { MenuGroupType } from "../lib/types/types/menu-group.type"
 
-// react pdf
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from "react-pdf";
-import { assetUrlFor } from "../lib/helpers/sanity-helpers"
-import { Formitable } from "../components/formitable"
-import { GlobalType } from "../lib/types/base/global.type"
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 type PageProps = {

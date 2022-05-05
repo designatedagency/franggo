@@ -6,18 +6,12 @@ import { Button } from '../components/core/button'
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
-import { CTA } from "../components/cta"
 import { DoubleBlock } from "../components/doubleBlock"
 import { Formitable } from "../components/formitable"
-import { Hero } from "../components/hero"
-import { Locaties } from "../components/locaties"
-import { Menu } from "../components/menu"
 import { SmallHero } from "../components/smallHero"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
 import { GlobalType } from "../lib/types/base/global.type"
 import { AboutPageType } from "../lib/types/pages/about-page.type"
-import { HomePage } from "../lib/types/pages/home-page.type"
-import { MenuPageType } from "../lib/types/pages/menu-page"
 import { LocationType } from "../lib/types/types/location.type"
 import { MenuGroupType } from "../lib/types/types/menu-group.type"
 
