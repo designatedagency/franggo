@@ -12,6 +12,7 @@ import { Hero } from "../components/hero"
 import { Locaties } from "../components/locaties"
 import { Menu } from "../components/menu"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
+import { GlobalType } from "../lib/types/base/global.type"
 import { HomePage } from "../lib/types/pages/home-page.type"
 import { MenuPageType } from "../lib/types/pages/menu-page"
 import { LocationType } from "../lib/types/types/location.type"
@@ -19,6 +20,7 @@ import { MenuGroupType } from "../lib/types/types/menu-group.type"
 
 type PageProps = {
     page: MenuPageType
+    global: GlobalType;
     locations: LocationType[]
     menuGroups: MenuGroupType[]
 }
@@ -37,7 +39,7 @@ export default function MenuPage(props: SanityNextStaticProps<PageProps>) {
             <Formitable />
             <Menu menuGroups={props.data.menuGroups} />
             <DoubleBlock backgroundPattern={true} doubleBlock={data.page.textAndImageBlock} />
-            <Footer />
+            <Footer locations={props.data.locations} global={data.global} />
 
             {/* Exit preview button */}
             {props.preview && <Link locale={false} href="/api/exit-preview"><Button variant={"primary"} className="fixed bottom-5 right-5 w-fit">Exit preview</Button></Link>}
@@ -52,6 +54,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
             queries: {
                 page: {
                     groq: `*[_type == "menu"]`
+                },
+                global: {
+                    groq: `*[_type == "global"]`
                 },
                 locations: {
                     groq: `*[_type == "location"]`,

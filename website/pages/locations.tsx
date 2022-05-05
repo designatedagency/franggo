@@ -11,6 +11,7 @@ import { Formitable } from "../components/formitable"
 import { Locaties } from "../components/locaties"
 import { SmallHero } from "../components/smallHero"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
+import { GlobalType } from "../lib/types/base/global.type"
 import { AboutPageType } from "../lib/types/pages/about-page.type"
 import { LocationType } from "../lib/types/types/location.type"
 import { MenuGroupType } from "../lib/types/types/menu-group.type"
@@ -18,6 +19,7 @@ import { MenuGroupType } from "../lib/types/types/menu-group.type"
 type PageProps = {
     page: AboutPageType;
     locations: LocationType[]
+    global: GlobalType;
     menuGroups: MenuGroupType[]
 }
 
@@ -45,7 +47,7 @@ export default function Locations(props: SanityNextStaticProps<PageProps>) {
                 })}
             </Block>
 
-            < Footer />
+            < Footer locations={props.data.locations} global={data.global} />
 
             {/* Exit preview button */}
             {props.preview && <Link locale={false} href="/api/exit-preview"><Button variant={"primary"} className="fixed bottom-5 right-5 w-fit">Exit preview</Button></Link>}
@@ -60,6 +62,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
             queries: {
                 page: {
                     groq: `*[_type == "locations"]`
+                },
+                global: {
+                    groq: `*[_type == "global"]`
                 },
                 locations: {
                     groq: `*[_type == "location"]`,

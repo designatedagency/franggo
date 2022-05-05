@@ -20,11 +20,13 @@ import { Document, Page } from 'react-pdf';
 import { pdfjs } from "react-pdf";
 import { assetUrlFor } from "../lib/helpers/sanity-helpers"
 import { Formitable } from "../components/formitable"
+import { GlobalType } from "../lib/types/base/global.type"
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 type PageProps = {
     page: AllergiesPageType;
     locations: LocationType[]
+    global: GlobalType;
     menuGroups: MenuGroupType[]
 }
 
@@ -74,7 +76,7 @@ export default function Allergies(props: SanityNextStaticProps<PageProps>) {
                 <div className={`absolute h-full object-cover w-[50px] z-10 top-0 right-0  bg-contain bg-[url('/graphic/right.svg')]  bg-repeat-y`} />
             </div>
 
-            < Footer />
+            <Footer locations={props.data.locations} global={data.global} />
 
             {/* Exit preview button */}
             {props.preview && <Link locale={false} href="/api/exit-preview"><Button variant={"primary"} className="fixed bottom-5 right-5 w-fit">Exit preview</Button></Link>}
@@ -89,6 +91,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
             queries: {
                 page: {
                     groq: `*[_type == "allergies"]`
+                },
+                global: {
+                    groq: `*[_type == "global"]`
                 },
                 locations: {
                     groq: `*[_type == "location"]`,
