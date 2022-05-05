@@ -56,35 +56,35 @@ export const Footer: FC<{
                     {/* TODO  */}
                     <div className="flex flex-col gap-2 text-white">
                         <p className="font-heading text-2xl uppercase">Locaties</p>
-
-                        {props.locations?.map((location, i) => {
-                            return (
-                                <div key={i} className="flex flex-col gap-2">
-                                    <p className="font-bold">{location.title}</p>
-                                    <div>
-                                        <p>{location.street}</p>
-                                        <p>{location.zip}</p>
-                                    </div>
-                                    <div>
-                                        {/* opening times is not a string[]! */}
-                                        {/* <p>{location.openingTimes.map((time, i) => {
+                        <div className="flex flex-col sm:flex-row gap-8">
+                            {props.locations?.map((location, i) => {
+                                return (
+                                    <div key={i} className="flex flex-col gap-2">
+                                        <p className="font-medium font-heading text-xl">{location.title}</p>
+                                        <div>
+                                            <p>{location.street}</p>
+                                            <p>{location.zip}</p>
+                                        </div>
+                                        <div>
+                                            {/* opening times is not a string[]! */}
+                                            {/* <p>{location.openingTimes.map((time, i) => {
                                             return (
                                                 <p key={i}>{time}</p>
                                             )
                                         })}</p> */}
+                                        </div>
+                                        <div>
+                                            <a className="hover:text-franggo-orange transition-all" href={`tel: ${location?.phone}`}>
+                                                <p>{location?.phone}</p>
+                                            </a>
+                                            <a className="hover:text-franggo-orange transition-all" href={`mailto: ${location?.email}`}>
+                                                <p>{location?.email}</p>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <a className="hover:text-franggo-orange transition-all" href={`tel: ${location?.phone}`}>
-                                            <p>{location?.phone}</p>
-                                        </a>
-                                        <a className="hover:text-franggo-orange transition-all" href={`mailto: ${location?.email}`}>
-                                            <p>{location?.email}</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            )
-                        })}
-
+                                )
+                            })}
+                        </div>
                     </div>
 
                 </div>

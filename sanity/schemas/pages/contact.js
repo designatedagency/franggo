@@ -11,10 +11,6 @@ export default {
             name: "hero",
             title: "Hero",
         },
-        {
-            name: "contactBlocks",
-            title: "Contact Blocks",
-        },
     ],
     fields: [
         // SEO
@@ -47,13 +43,5 @@ export default {
             type: "image",
             group: "hero",
         },
-        {
-            name: "contactBlocks",
-            title: "Contact Blocks",
-            type: "array",
-            of: [{ type: "contactBlock" }],
-            group: "contactBlocks",
-        },
-
     ],
 }

@@ -16,6 +16,7 @@ import { AboutPageType } from "../lib/types/pages/about-page.type"
 import { ContactPageType } from "../lib/types/pages/contact-page.type"
 import { LocationType } from "../lib/types/types/location.type"
 import { MenuGroupType } from "../lib/types/types/menu-group.type"
+import Locations from "./locations"
 
 type PageProps = {
     page: ContactPageType;
@@ -35,16 +36,14 @@ export default function Contact(props: SanityNextStaticProps<PageProps>) {
             <Header />
             <Formitable />
             <SmallHero title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
+            <Locaties hideButton sticker showMap hideText locations={data.locations} />
+            {/* <Block>
 
-            <Block>
-
-                {/* Contactblock should be getting content from locations! TODO */}
-                {data.page.contactBlocks?.map((contactBlock, i) => {
-                    return (
-                        <ContactBlock block={contactBlock} key={i} />
-                    )
+                {data.locations.map((location, i) => {
+                    return <ContactBlock data={location} key={i} />
                 })}
-            </Block>
+
+            </Block> */}
 
             < Footer />
 

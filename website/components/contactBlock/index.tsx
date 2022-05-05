@@ -2,13 +2,16 @@ import React, { FC } from "react";
 import { createClassName } from "../../lib/helpers/react-helpers";
 import { imageUrlFor } from "../../lib/helpers/sanity-helpers";
 import { ContactBlockType } from "../../lib/types/components/contact-block.type";
+import { LocationType } from "../../lib/types/types/location.type";
 import { Button } from "../core/button";
 
 export const ContactBlock: FC<{
-    block?: ContactBlockType;
+    data?: LocationType[];
 } & React.HtmlHTMLAttributes<HTMLDivElement>> = (props) => {
 
-    const { block, ...filteredProps } = props;
+    const { data, ...filteredProps } = props;
+
+
 
     return (
         <div {...filteredProps} className={createClassName(props, `relative`)}>
@@ -17,18 +20,18 @@ export const ContactBlock: FC<{
                 <div className="p-8 gap-4 grid grid-cols-1 md:grid-cols-2 md:gap-8">
 
                     <div className="md:hidden">
-                        <p className="uppercase font-heading text-franggo-blue">{block?.tag}</p>
-                        <h1 className=" font-heading font-bold ">{block?.title}</h1>
+                        <p className="uppercase font-heading text-franggo-blue">{location?.tag}</p>
+                        <h1 className=" font-heading font-bold ">{location?.title}</h1>
                     </div>
                     <div>
-                        <img className="h-full w-full object-cover" src={imageUrlFor(block?.image)} />
+                        <img className="h-full w-full object-cover" src={imageUrlFor(location?.image)} />
                     </div>
                     <div className="flex flex-col justify-between gap-5">
                         <div className="flex flex-col gap-4">
                             <div className="justify-between items-center hidden md:flex">
                                 <div>
-                                    <p className="uppercase font-heading text-franggo-blue">{block?.tag}</p>
-                                    <h1 className=" font-heading font-bold ">{block?.title}</h1>
+                                    <p className="uppercase font-heading text-franggo-blue">{location?.tag}</p>
+                                    <h1 className=" font-heading font-bold ">{location?.title}</h1>
                                 </div>
                                 <a href={block?.buttonUrl} target={block?.buttonUrl?.includes("http") ? "_blank" : "_self"} rel="noreferrer">
                                     <Button variant="primary" className="bg-black text-white h-fit">{block?.buttonName}</Button>
@@ -38,12 +41,12 @@ export const ContactBlock: FC<{
                             <div className="flex gap-5 items-center justify-between">
                                 <div className="flex flex-col gap-4">
                                     <div>
-                                        <p className="">{block?.streetName}</p>
-                                        <p className="">{block?.postalCode} {block?.city}</p>
+                                        <p className="">{location?.streetName}</p>
+                                        <p className="">{location?.postalCode} {block?.city}</p>
                                     </div>
 
                                     <div>
-                                        {block?.openingHours?.map((hours, i) => {
+                                        {location?.openingHours?.map((hours, i) => {
                                             return (
                                                 <p key={i}>{hours}</p>
                                             )
@@ -51,16 +54,16 @@ export const ContactBlock: FC<{
                                     </div>
 
                                     <div>
-                                        <a className="hover:text-franggo-orange transition-all" href={`tel: ${block?.phoneNumber}`}>
-                                            <p>{block?.phoneNumber}</p>
+                                        <a className="hover:text-franggo-orange transition-all" href={`tel: ${location?.phoneNumber}`}>
+                                            <p>{location?.phoneNumber}</p>
                                         </a>
-                                        <a className="hover:text-franggo-orange transition-all" href={`mailto: ${block?.email}`}>
-                                            <p>{block?.email}</p>
+                                        <a className="hover:text-franggo-orange transition-all" href={`mailto: ${location?.email}`}>
+                                            <p>{location?.email}</p>
                                         </a>
                                     </div>
                                 </div>
-                                {block?.sticker ?
-                                    <img className="w-[150px] hidden sm:block" src={imageUrlFor(block.sticker)} />
+                                {location?.sticker ?
+                                    <img className="w-[150px] hidden sm:block" src={imageUrlFor(location.sticker)} />
                                     : null}
                             </div>
 
