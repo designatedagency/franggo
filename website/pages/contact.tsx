@@ -1,7 +1,6 @@
 import { GetStaticPropsContext } from "next"
 import Link from "next/link"
 import React from "react"
-import { ContactBlock } from "../components/contactBlock"
 import { Block } from "../components/core/block"
 import { Button } from '../components/core/button'
 import { Footer } from "../components/core/footer"
