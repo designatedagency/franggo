@@ -28,13 +28,16 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
 
   const data = useSanityPreview(props);
 
+  console.log(data);
+
+
   return (
     <div>
 
       <Meta tags={data.page.meta} />
       <Formitable />
       <Header global={data.global} />
-      <Hero />
+      <Hero image={data.page.bgImage} />
       <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
       <Menu menuGroups={props.data.menuGroups} />
       <Locaties locations={props.data.locations} />

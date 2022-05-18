@@ -37,7 +37,7 @@ export const CTA: FC<{
 
                     </div>
                     <div>
-                        <img className="h-full w-full object-cover" src="https://s3-alpha-sig.figma.com/img/6b7d/8be0/3c0c6802a24ee58d67a8687f36c77602?Expires=1652659200&Signature=JEEiJPideDUh8BnGKkrkgmWSnFlhMKlcBjseBoNXHaOP2TP4SmpWHnN5hHHYOg3wm4iiGBPycnDLbdo7FzcrZgr9vzqAjltm-Z9CfB4fkTdaPlS9UHE0~xPe~87~x7rc-HwM04MXCevZ8xPp7RFbm3iovH3Xo0ztllETKWbdi6UsqTqNlt6f612~WTSBmAsX348vh-e4tLwBZ5GnOhi0j8x-B1H4iDEBmUiv8~drCARo19w4Bp-qXwE0LDvZp7Lfn7wwRTxB~fIsersGqtyJyFkFn5TY85rOWRIyCo5no8lmWrzT2NnDIvk5dVDm7Tgx5egPq4xr7kWJijWSY9~m8w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
+                        <img className="h-full w-full object-cover" src={imageUrlFor(ctaBlock?.image)} />
                     </div>
                 </div>
             </div>

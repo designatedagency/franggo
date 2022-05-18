@@ -10,7 +10,7 @@ export const Meta: FC<{
         <>
             <Head>
                 <title>{tags?.title}</title>
-                <link rel="icon" href={"/favicon.svg"} />
+                <link rel="icon" href={"/favicon.png"} />
 
                 <meta name="title" content={tags?.title} />
                 <meta name="description" content={tags?.description} />
