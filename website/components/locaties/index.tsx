@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { createClassName } from "../../lib/helpers/react-helpers";
+import { imageUrlFor } from "../../lib/helpers/sanity-helpers";
 import { LocationType } from "../../lib/types/types/location.type";
 import { Button } from "../core/button";
 
@@ -27,7 +28,7 @@ export const Locaties: FC<{
                     {locations?.map((location, i) => {
                         return (
                             <div key={i} className={`grid  gap-8 ${showMap ? `grid-cols-1 md:grid-cols-2 ` : `grid-cols-1 `}`}>
-                                <img className="w-full h-full object-cover" src="https://s3-alpha-sig.figma.com/img/f960/4325/8f8ad64015b7096c4239b993fbb8d6c1?Expires=1652659200&Signature=CvdmJZBTQ6cFst-VpMajYwDO9Ur4pYrqI-8zfIEXw~S2qnI4R~f6mzSyknqEerVad9SnPjTc6haX0c8uy286upTZJtdbJMVkPEMaXrZZV58yL~oDxxpK10ckWfguFjB0wnBm1VJ-nzRNcKwugRs3kbWd5qpfaWrVk8y8bRCmzTDH049IHrA6H-4WLgeeOwQCVZhnUnnN21pwd7kiQKT6AMrchuR6urnFyeWuHJ562ivZFlBIZWWfKor1ulNHyMQ0R0v0xq0g8aVZMxio4ybs5ebTFHNKFWnEEjN9OEZ-os9kRmTasHV9rnf0AcdzEm~sAyp5-KLmeDAssgkg30uikg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
+                                <img className="w-full h-full object-cover" src={imageUrlFor(location.image)} />
                                 <div>
                                     <div className="flex flex-col gap-4">
                                         <p className="uppercase font-heading">Restaurant</p>

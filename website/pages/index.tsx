@@ -43,7 +43,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Footer locations={props.data.locations} global={data.global} />
 
       {/* Exit preview button */}
-      {props.preview && <Link locale={false} href="/api/exit-preview"><Button variant={"primary"} className="fixed bottom-5 right-5 w-fit">Exit preview</Button></Link>}
+      {/* {props.preview && <Link locale={false} href="/api/exit-preview"><Button variant={"primary"} className="fixed bottom-5 right-5 w-fit">Exit preview</Button></Link>} */}
     </div >
   )
 }

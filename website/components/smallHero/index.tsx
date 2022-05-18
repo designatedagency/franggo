@@ -12,7 +12,6 @@ export const SmallHero: FC<{
 
     const { title, description, image, ...filteredProps } = props;
 
-    console.log(imageUrlFor(image))
 
     return (
         <div {...filteredProps} className={createClassName(props, "relative min-h-[70vh] sm:min-h-[50vh] flex justify-center")}>
