@@ -39,7 +39,7 @@ export const Header: FC<{
 
     return (
         <header {...filteredProps} className={createClassName(props, "sticky top-0 z-30 w-[100%] sm:py-4  bg-black ")}>
-            <img src='/decor.svg' className='w-full h-[82px] object-cover absolute right-0 top-0 left-0 bottom-0' />
+            <img src='/decor.svg' className='hidden lg:block w-full h-[82px] object-cover absolute right-0 top-0 left-0 bottom-0' />
             <div className="flex flex-col justify-between select-none p-4 mx-auto max-w-page z-10 relative  sm:py-0 sm:px-4 lg:flex-row">
 
                 {/* mobile holder */}
@@ -91,7 +91,7 @@ export const Header: FC<{
                         : null}
 
                     <div className='block lg:hidden'>
-                        {/* <a href={global?.orderLink} target="_blank" rel="noreferrer">
+                        <Link href={'/contact'} >
                             <Button className="w-auto text-3xl !text-white !p-0 mb-5" variant="unstyled">
                                 <div className="relative mr-2 w-5 h-5">
                                     <img className="w-5 h-5 absolute transition-all left-0 group-hover:left-1" src="/icons/shopping-card.svg" />
@@ -100,7 +100,7 @@ export const Header: FC<{
                                     Bestellen
                                 </p>
                             </Button>
-                        </a> */}
+                        </Link>
 
                         <a href="#ft-open">
                             <Button className="w-auto text-3xl " variant="primary">Reserveren</Button>
@@ -109,7 +109,7 @@ export const Header: FC<{
 
                 </div>
                 <div className='hidden lg:flex gap-5 items-center justify-center'>
-                    {/* <a href={global?.orderLink} target="_blank" rel="noreferrer">
+                    <Link href={'/contact'} >
                         <Button className="w-auto text-3xl !text-white !p-0" variant="unstyled">
                             <div className="relative mr-2 w-5 h-5">
                                 <img className="w-5 h-5 absolute transition-all left-0 group-hover:left-1" src="/icons/shopping-card.svg" />
@@ -118,7 +118,7 @@ export const Header: FC<{
                                 Bestellen
                             </p>
                         </Button>
-                    </a> */}
+                    </Link>
                     <a href="#ft-open">
                         <Button className="w-auto text-xl" variant="primary">Reserveren</Button>
                     </a>

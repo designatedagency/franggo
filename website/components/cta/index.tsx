@@ -11,7 +11,7 @@ export const CTA: FC<{
     const { ctaBlock, ...filteredProps } = props;
     return (
         <div {...filteredProps} className={createClassName(props, "flex justify-center bg-[url(/tiles.svg)] bg-repeat-x bg-cover  bg-top")}>
-            <div className="w-full max-w-page p-8 z-10">
+            <div className="w-full max-w-page px-8 py-16 z-10">
                 <div className="bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="flex flex-col gap-8 justify-between">
                         <div className=" h-fit">

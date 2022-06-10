@@ -12,7 +12,7 @@ export const Menu: FC<{
     return (
         <div {...filteredProps} className={createClassName(props, "flex flex-col items-center justify-center bg-white relative")}>
             <img className="h-full w-[40px] md:w-auto object-contain absolute top-0 rotate-180 left-0 bottom-0" src="/sides.png" />
-            <div className="w-full max-w-page flex flex-col md:flex-row items-start md:items-center gap-8 justify-between pt-8 px-8">
+            <div className="w-full max-w-page flex flex-col md:flex-row items-start md:items-center gap-8 justify-between px-8 py-16">
                 <img className="h-[80px]" src="/menu-text.svg" />
                 <p className="">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.</p>
             </div>

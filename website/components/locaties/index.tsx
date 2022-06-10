@@ -20,11 +20,11 @@ export const Locaties: FC<{
 
             {/* <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/leftnew.png" /> */}
             {!hideText ?
-                <div className="w-full max-w-page flex justify-start pt-8 px-8">
+                <div className="w-full max-w-page flex justify-start px-8 pt-16">
                     <img className="h-[80px]" src="/locaties-text.svg" />
                 </div>
                 : null}
-            <div className="w-full max-w-page p-8 z-10">
+            <div className="w-full max-w-page px-8 py-16 z-10">
                 <div className={`bg-white p-8 grid ${showMap ? `grid-cols-1 ` : `grid-cols-1 md:grid-cols-2`}  gap-8`}>
                     {locations?.map((location, i) => {
                         return (
@@ -44,9 +44,14 @@ export const Locaties: FC<{
 
                                             </div>
                                         </div>
-                                        <div>
-                                            <p>{location.street}</p>
-                                            <p>{`${location.zip}, ${location.city}`}</p>
+                                        <div className="flex gap-8">
+                                            <div>
+                                                <p>{location.street}</p>
+                                                <p>{`${location.zip}, ${location.city}`}</p>
+                                            </div>
+                                            <div>
+                                                <a href={`tel:${location.phone}`} className="cursor-pointer">{location.phone}</a>
+                                            </div>
                                         </div>
                                     </div>
                                     {showMap ? <div className="h-[250px] mt-8">

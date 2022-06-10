@@ -18,8 +18,8 @@ export const DoubleBlock: FC<{
         <div {...filteredProps} className={createClassName(props, `flex justify-center ${backgroundPattern && !transparant ? `bg-[url(/tiles.svg)] bg-repeat-x bg-cover bg-top` : transparant ? "" : `bg-franggo-orange`}  relative`)}>
             {/* {backgroundPattern || transparant ? null : <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />} */}
 
-            <div className={`w-full max-w-page ${transparant ? "" : "p-8"} z-10`}>
-                <div className={`${!transparant ? "bg-white" : ""} p-8 grid grid-cols-1 md:grid-cols-2 gap-8`}>
+            <div className={`w-full max-w-page ${transparant ? "px-8 py-16" : "px-8 py-16"} z-10`}>
+                <div className={`${!transparant ? "bg-white p-8" : ""} grid grid-cols-1 md:grid-cols-2 gap-8`}>
 
                     {flipped ?
                         <div>
