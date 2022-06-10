@@ -2,8 +2,6 @@ import { SanityAsset } from "@sanity/asset-utils";
 import React, { FC } from "react";
 import { createClassName } from "../../lib/helpers/react-helpers";
 import { imageUrlFor } from "../../lib/helpers/sanity-helpers";
-import { HomePage } from "../../lib/types/pages/home-page.type";
-import { Button } from "../core/button";
 
 export const Hero: FC<{
     image?: SanityAsset;
@@ -13,7 +11,7 @@ export const Hero: FC<{
 
 
     return (
-        <div {...filteredProps} className={createClassName(props, `h-[90vh] sm:h-[60vh] flex justify-center `)}>
+        <div {...filteredProps} className={createClassName(props, `h-[90vh] sm:h-[70vh] flex justify-center `)}>
             <div className="flex justify-center w-full max-w-page p-8 z-10 relative">
                 <img className="w-full md:w-[70%] object-contain" src="/hero-logo.svg" />
                 <div className="absolute w-[200px] h-[200px] right-12 bottom-12">

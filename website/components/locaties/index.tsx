@@ -28,8 +28,9 @@ export const Locaties: FC<{
                     {locations?.map((location, i) => {
                         return (
                             <div key={i} className={`grid  gap-8 ${showMap ? `grid-cols-1 md:grid-cols-2 ` : `grid-cols-1 `}`}>
-                                <img className="w-full h-full object-cover" src={imageUrlFor(location.image)} />
-                                <div>
+                                <div className="flex">
+                                    <img className="w-full h-64 md:h-full md:aspect-[3/2] object-cover" src={imageUrlFor(location.image)} /></div>
+                                <div className="flex flex-col justify-between">
                                     <div className="flex flex-col gap-4">
                                         <p className="uppercase font-heading">Restaurant</p>
                                         <div className="flex flex-col sm:flex-row w-full justify-between gap-4 items-start sm:items-center">
