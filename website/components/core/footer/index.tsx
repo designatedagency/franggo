@@ -23,8 +23,12 @@ export const Footer: FC<{
                         <img src={global?.footerLogo ? imageUrlFor(global.footerLogo) : "/logo.svg"} className="h-8" />
                         <img src="/flame-grilled.svg" className="h-2 mt-4" />
                         <div className="flex row gap-4 mt-4">
-                            <img src="/social/facebook.svg" className=" cursor-pointer hover:scale-105 active:scale-95 transition-all h-8" />
-                            <img src="/social/instagram.svg" className=" cursor-pointer hover:scale-105 active:scale-95 transition-all h-8" />
+                            <a href="https://www.facebook.com/letsgofranggo/" target={'_blank'} rel='noreferrer'>
+                                <img src="/social/facebook.svg" className=" cursor-pointer hover:scale-105 active:scale-95 transition-all h-8" />
+                            </a>
+                            <a href="https://www.instagram.com/letsgofranggo/" target={'_blank'} rel='noreferrer'>
+                                <img src="/social/instagram.svg" className=" cursor-pointer hover:scale-105 active:scale-95 transition-all h-8" />
+                            </a>
                         </div>
                     </div>
 
@@ -45,9 +49,9 @@ export const Footer: FC<{
                         <Link href="/faq">
                             <p className={`transition-all text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer text-white ${router.pathname === "/faq" ? " text-franggo-orange" : ""}`}>FAQ</p>
                         </Link>
-                        <Link href="/allergies">
+                        {/* <Link href="/allergies">
                             <p className={`transition-all text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer text-white ${router.pathname === "/allergies" ? " text-franggo-orange" : ""}`}>Voedsel / allergieen</p>
-                        </Link>
+                        </Link> */}
                         <Link href="/contact">
                             <p className={`transition-all text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer text-white ${router.pathname === "/contact" ? " text-franggo-orange" : ""}`}>Contact</p>
                         </Link>

@@ -1,4 +1,4 @@
-import { Cross as Hamburger } from 'hamburger-react'
+import { Cross as Hamburger } from 'hamburger-react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import React, { FC, useEffect, useState } from "react";
@@ -45,7 +45,7 @@ export const Header: FC<{
                 {/* mobile holder */}
                 <div className="flex justify-between items-center">
                     <Link href="/">
-                        <img className="cursor-pointer " src={global?.headerLogo ? imageUrlFor(global.headerLogo) : "/full-logo.svg"} />
+                        <img className="cursor-pointer h-8" src={global?.headerLogo ? imageUrlFor(global.headerLogo) : "/hor-logo.svg"} />
                     </Link>
                     <div className="flex lg:hidden">
                         <Hamburger color={"white"} duration={0.2} size={30} toggled={mobileNavOpened} toggle={switchNav} />
@@ -54,9 +54,12 @@ export const Header: FC<{
 
                 {/* links */}
                 <div
-                    className={`flex gap-5 ${mobileNavOpened ? "translate-x-[0%]" : "translate-x-[120%]"} bg-black lg:bg-transparent flex-col fixed p-5  h-[calc(100vh-82px)] top-[82px] left-0 w-[100%] transition-transform  lg:top-[initial] lg:translate-x-[initial] lg:h-auto lg:relative lg:flex-row lg:items-center lg:w-auto lg:p-0`}
+                    className={`flex gap-5 ${mobileNavOpened ? "translate-x-[0%]" : "translate-x-[120%]"} bg-black lg:bg-transparent flex-col fixed p-5  h-[calc(100vh-80px)] top-[80px] left-0 w-[100%] transition-transform  lg:top-[initial] lg:translate-x-[initial] lg:h-auto lg:relative lg:flex-row lg:items-center lg:w-auto lg:p-0`}
                 >
 
+                    <Link href="/">
+                        <p className={` transition-all text-3xl lg:text-xl font-heading font-medium hover:text-franggo-orange cursor-pointer ${router.pathname === "/" ? " text-franggo-orange " : "text-white"}`}>Home</p >
+                    </Link>
                     <Link href="/menu">
                         <p className={` transition-all text-3xl lg:text-xl font-heading font-medium hover:text-franggo-orange cursor-pointer ${router.pathname === "/menu" ? " text-franggo-orange " : "text-white"}`}>Menu</p >
                     </Link>
@@ -88,7 +91,7 @@ export const Header: FC<{
                         : null}
 
                     <div className='block lg:hidden'>
-                        <a href={global?.orderLink} target="_blank" rel="noreferrer">
+                        {/* <a href={global?.orderLink} target="_blank" rel="noreferrer">
                             <Button className="w-auto text-3xl !text-white !p-0 mb-5" variant="unstyled">
                                 <div className="relative mr-2 w-5 h-5">
                                     <img className="w-5 h-5 absolute transition-all left-0 group-hover:left-1" src="/icons/shopping-card.svg" />
@@ -97,7 +100,7 @@ export const Header: FC<{
                                     Bestellen
                                 </p>
                             </Button>
-                        </a>
+                        </a> */}
 
                         <a href="#ft-open">
                             <Button className="w-auto text-3xl " variant="primary">Reserveren</Button>
@@ -106,7 +109,7 @@ export const Header: FC<{
 
                 </div>
                 <div className='hidden lg:flex gap-5 items-center justify-center'>
-                    <a href={global?.orderLink} target="_blank" rel="noreferrer">
+                    {/* <a href={global?.orderLink} target="_blank" rel="noreferrer">
                         <Button className="w-auto text-3xl !text-white !p-0" variant="unstyled">
                             <div className="relative mr-2 w-5 h-5">
                                 <img className="w-5 h-5 absolute transition-all left-0 group-hover:left-1" src="/icons/shopping-card.svg" />
@@ -115,7 +118,7 @@ export const Header: FC<{
                                 Bestellen
                             </p>
                         </Button>
-                    </a>
+                    </a> */}
                     <a href="#ft-open">
                         <Button className="w-auto text-xl" variant="primary">Reserveren</Button>
                     </a>

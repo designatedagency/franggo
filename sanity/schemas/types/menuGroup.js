@@ -31,5 +31,12 @@ export default {
             type: "array",
             of: [{ type: "string" }],
         },
+        {
+            name: "sauces",
+            title: "Sauces",
+            description: "Sauces for the menu group",
+            type: "array",
+            of: [{ type: "string" }],
+        },
     ],
 }

@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { createClassName } from "../../lib/helpers/react-helpers";
 import { imageUrlFor } from "../../lib/helpers/sanity-helpers";
 import { MenuGroupType } from "../../lib/types/types/menu-group.type";
-import { Button } from "../core/button";
 
 export const Menu: FC<{
     menuGroups?: MenuGroupType[];
@@ -12,7 +11,7 @@ export const Menu: FC<{
 
     return (
         <div {...filteredProps} className={createClassName(props, "flex flex-col items-center justify-center bg-white relative")}>
-            <img className="h-full w-[40px] sm:w-auto absolute top-0 rotate-180 left-0 bottom-0" src="/graphic/right-black.svg" />
+            <img className="h-full w-[40px] md:w-auto object-contain absolute top-0 rotate-180 left-0 bottom-0" src="/sides.png" />
             <div className="w-full max-w-page flex flex-col md:flex-row items-start md:items-center gap-8 justify-between pt-8 px-8">
                 <img className="h-[80px]" src="/menu-text.svg" />
                 <p className="">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.</p>
@@ -48,12 +47,22 @@ export const Menu: FC<{
                                         })}
                                     </div>
                                     : null}
+                                {menuGroup.sauces ?
+                                    <div className="w-full h-full p-8 bg-red-600 text-white">
+                                        <h2 className="mb-5">Sauces</h2>
+                                        {menuGroup.sauces.map((supplement, i) => {
+                                            return (
+                                                <h3 className="mb-1 font-medium" key={i}>{supplement}</h3>
+                                            )
+                                        })}
+                                    </div>
+                                    : null}
                             </div>
                         )
                     })}
                 </div>
             </div>
-            <img className="h-full w-[40px] sm:w-auto absolute top-0 right-0 bottom-0" src="/graphic/right-black.svg" />
+            <img className="h-full w-[40px] md:w-auto object-contain  absolute top-0 right-0 bottom-0" src="/sides.png" />
 
         </div>
     )

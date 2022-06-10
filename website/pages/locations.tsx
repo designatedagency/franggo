@@ -1,8 +1,6 @@
 import { GetStaticPropsContext } from "next"
-import Link from "next/link"
 import React from "react"
 import { Block } from "../components/core/block"
-import { Button } from '../components/core/button'
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
@@ -37,7 +35,6 @@ export default function Locations(props: SanityNextStaticProps<PageProps>) {
 
             <SmallHero title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
 
-            <Locaties hideText locations={props.data.locations} />
 
             <Block>
                 {data.page.textAndImageBlocks?.map((doubleBlock, i) => {
@@ -46,6 +43,9 @@ export default function Locations(props: SanityNextStaticProps<PageProps>) {
                     )
                 })}
             </Block>
+
+            <Locaties hideText locations={props.data.locations} />
+
 
             < Footer locations={props.data.locations} global={data.global} />
 
