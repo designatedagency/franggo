@@ -1,8 +1,8 @@
-import { GetStaticPropsContext } from "next";
-import { queries } from "../constants/sanity-queries";
-import { usePreviewSubscription } from "./sanity-helpers";
-import { createClient } from 'next-sanity';
 import _ from "lodash";
+import { GetStaticPropsContext } from "next";
+import { createClient } from 'next-sanity';
+import { useEffect, useRef, useState } from "react";
+import { queries } from "../constants/sanity-queries";
 
 export type SanityQuery = {
     groq: string;
@@ -39,6 +39,7 @@ export const sanityConfig = {
 };
 
 export async function getSanityNextProps<T>(options: SanityNextStaticPropsOptions): Promise<SanityNextStaticProps<T>> {
+
     const queryKeys = Object.keys(options.queries);
     let data = {} as T;
 
@@ -80,31 +81,19 @@ export const getNextRevalidation = () => {
 export const useSanityPreview = <T>(props: SanityNextStaticProps<T>) => {
     if (!props.preview) return props.data;
     const queryKeys = Object.keys(props.queries);
-    const subs = queryKeys.map(queryKey => usePreviewSubscription(props.queries[queryKey].groq, { enabled: props.preview }));
-    let data = {} as T;
-
-    const copiedSubs = JSON.parse(JSON.stringify(subs));
-
-    for (let i = 0; i < queryKeys.length; i++) {
-        const queryKey = queryKeys[i];
-        data = Object.assign(
-            {},
-            {
-                ...data,
-                // @ts-ignore
-                [queryKey]: (copiedSubs[i].data ? props.data[queryKey].expectArray ? copiedSubs[i].data : copiedSubs[i].data[0] : props.data[queryKey])
-            }
-        )
-    }
-    translateObject(data, props.locale);
-    return data;
+    // @ts-ignore
+    const subs = queryKeys.map(queryKey => useQueryListener(props.queries[queryKey].groq, props.data[queryKey]));
+    const newData: { [key: string]: T } = {};
+    _.cloneDeep(subs).forEach((sub, i) => newData[queryKeys[i]] = sub.data)
+    translateObject(newData, props.locale);
+    return newData as unknown as T;
 }
 
 const translateObject = (object: any, locale: string = "en") => {
     Object.keys(object).forEach(key => {
         if (typeof object[key] === "object") {
             if (object[key].hasOwnProperty("_type") && object[key]._type.includes("_locale")) {
-                object[key] = _.get(object[key], locale);
+                object[key] = _.get(object[key], locale) || []
             } else {
                 translateObject(object[key], locale);
             }
@@ -140,4 +129,34 @@ export const performSanityQuery = async (query: string, isArray: boolean = false
         console.log("Failed a Sanity Query", error);
         return {};
     }
+}
+
+export const useQueryListener = <T>(query: string, defaultData: T) => {
+    const [data, setData] = useState<T>(defaultData);
+    const debounced = useRef<_.DebouncedFuncLeading<any>>();
+
+    const getData = async () => {
+        const newData = await readClient.fetch(query);
+        if (newData && newData[0])
+            setData(newData[0])
+    }
+
+    useEffect(() => {
+        debounced.current = _.debounce(getData, 1000);
+
+        const subscription = readClient.listen(query).subscribe((update) => {
+            if (update.type === "mutation") {
+                if (debounced.current) {
+                    debounced.current?.cancel()
+                    debounced.current();
+                }
+            }
+        })
+
+        return () => {
+            subscription.unsubscribe();
+        }
+    }, [])
+
+    return { data }
 }
