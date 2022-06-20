@@ -1,7 +1,4 @@
 import { GetStaticPropsContext } from "next"
-import Link from "next/link"
-import React from "react"
-import { Button } from '../components/core/button'
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
@@ -32,7 +29,7 @@ export default function MenuPage(props: SanityNextStaticProps<PageProps>) {
 
             <Header />
             <Formitable />
-            <Menu menuGroups={props.data.menuGroups} />
+            <Menu page={data.page} menuGroups={props.data.menuGroups} />
             <DoubleBlock backgroundPattern={true} doubleBlock={data.page.textAndImageBlock} />
             <Footer locations={props.data.locations} global={data.global} />
 
@@ -48,7 +45,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
             context,
             queries: {
                 page: {
-                    groq: `*[_type == "menu"]`
+                    groq: `*[_type == "menu"]{..., menuTop[]->, menuBottom[]->}`
                 },
                 global: {
                     groq: `*[_type == "global"]`

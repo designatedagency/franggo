@@ -1,7 +1,4 @@
 import { GetStaticPropsContext } from "next"
-import Link from "next/link"
-import React from "react"
-import { Button } from '../components/core/button'
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
@@ -14,11 +11,13 @@ import { Menu } from "../components/menu"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
 import { GlobalType } from "../lib/types/base/global.type"
 import { HomePage } from "../lib/types/pages/home-page.type"
+import { MenuPageType } from "../lib/types/pages/menu-page"
 import { LocationType } from "../lib/types/types/location.type"
 import { MenuGroupType } from "../lib/types/types/menu-group.type"
 
 type PageProps = {
   page: HomePage
+  menuPage: MenuPageType;
   global: GlobalType;
   locations: LocationType[]
   menuGroups: MenuGroupType[]
@@ -39,7 +38,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Header global={data.global} />
       <Hero image={data.page.bgImage} />
       <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
-      <Menu menuGroups={props.data.menuGroups} />
+      <Menu page={data.menuPage} menuGroups={props.data.menuGroups} />
       <Locaties locations={props.data.locations} />
       <CTA ctaBlock={data.page.ctaBlock} />
 
@@ -58,6 +57,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       queries: {
         page: {
           groq: `*[_type == "home"]`
+        },
+        menuPage: {
+          groq: `*[_type == "menu"]{..., menuTop[]->, menuBottom[]->}`
         },
         global: {
           groq: `*[_type == "global"]`

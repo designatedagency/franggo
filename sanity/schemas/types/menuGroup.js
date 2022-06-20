@@ -5,15 +5,17 @@ export default {
 
     fields: [
         {
-            name: "image",
-            title: "Menu group image",
-            description: "Image for the menu group",
-            type: "image",
-        },
-        {
             name: "title",
             title: "Menu group name",
             description: "Name for the menu group",
+            type: "string",
+        },
+
+        {
+            name: "groupPrice",
+            title: "Menu group price",
+            description:
+                "Price for the menu group; this will hide the individual prices of the menu items",
             type: "string",
         },
 
@@ -23,20 +25,6 @@ export default {
             description: "Create menu items here",
             type: "array",
             of: [{ type: "menuItem" }],
-        },
-        {
-            name: "supplements",
-            title: "Supplements",
-            description: "Supplements for the menu group",
-            type: "array",
-            of: [{ type: "string" }],
-        },
-        {
-            name: "sauces",
-            title: "Sauces",
-            description: "Sauces for the menu group",
-            type: "array",
-            of: [{ type: "string" }],
         },
     ],
 }
