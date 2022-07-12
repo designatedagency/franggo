@@ -59,7 +59,7 @@ export const Footer: FC<{
 
                     {/* TODO  */}
                     <div className="flex flex-col gap-2 text-white">
-                        <p className="font-heading text-2xl uppercase">Locaties</p>
+                        <p className="font-heading text-2xl uppercase">Locations</p>
                         <div className="flex flex-col sm:flex-row gap-8">
                             {props.locations?.map((location, i) => {
                                 return (

@@ -27,9 +27,6 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
 
   const data = useSanityPreview(props);
 
-  console.log(data);
-
-
   return (
     <div>
 

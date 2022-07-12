@@ -18,7 +18,7 @@ export const CTA: FC<{
                             <p className="uppercase font-heading">{ctaBlock?.tag}</p>
                             <h1 className=" font-heading font-bold ">{ctaBlock?.title}</h1>
                         </div>
-                        <div className="flex flex-col md:flex-row gap-8 h-fit">
+                        <div className="flex flex-col md:grid grid-cols-2 gap-8 h-fit">
                             {ctaBlock?.ctaItems.map((ctaItem, i) => {
                                 return (
                                     <div key={i} className="flex flex-col gap-8">

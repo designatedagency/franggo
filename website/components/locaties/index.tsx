@@ -21,7 +21,7 @@ export const Locaties: FC<{
             {/* <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/leftnew.png" /> */}
             {!hideText ?
                 <div className="w-full max-w-page flex justify-start px-8 pt-16">
-                    <img className="h-[80px]" src="/locaties-text.svg" />
+                    <img className="h-[80px]" src="/locations-text.svg" />
                 </div>
                 : null}
             <div className="w-full max-w-page px-8 py-16 z-10">
@@ -33,7 +33,7 @@ export const Locaties: FC<{
                                     <img className="w-full h-64 md:h-full md:aspect-[3/2] object-cover" src={imageUrlFor(location.image)} /></div>
                                 <div className="flex flex-col justify-between">
                                     <div className="flex flex-col gap-4">
-                                        <p className="uppercase font-heading">Restaurant</p>
+                                        <p className="uppercase font-heading">{location.street.includes("Sweelinckstraat") ? "Walk in" : "Restaurant"}</p>
                                         <div className="flex flex-col sm:flex-row w-full justify-between gap-4 items-start sm:items-center">
                                             <h3 className="font-medium">{location.title}</h3>
                                             <div className="flex flex-row gap-4">

@@ -15,11 +15,17 @@ export const Menu: FC<{
 
     return (
         <div {...filteredProps} className={createClassName(props, "flex flex-col items-center justify-center bg-white relative")}>
-            {/* <img className="h-full w-[40px] md:w-auto object-contain absolute top-0 rotate-180 left-0 bottom-0" src="/sides.png" /> */}
+
+            <div className="my-5 md:hidden" />
+            <div className="w-full h-[40px] absolute left-0 top-5 bg-[url('/sides-mobile.svg')] bg-repeat-x bg-contain md:hidden " />
+
             <div className="w-full max-w-page flex flex-col md:flex-row items-start md:items-center gap-8 justify-between px-8 py-16">
                 <img className="h-[80px]" src="/menu-text.svg" />
             </div>
-            <div className="w-full max-w-page p-8 z-10">
+            <div className="relative w-full max-w-page p-8 z-10">
+
+                <div className="hidden h-full w-[40px] absolute top-0 left-0 bottom-0 bg-[url('/sides.png')] bg-repeat-y bg-contain md:block" />
+
                 <div className=" p-0 md:p-8 grid grid-cols-1  gap-8">
                     {page?.menuTop?.map((menuGroup, i) => {
                         return (
@@ -120,8 +126,14 @@ export const Menu: FC<{
                         )
                     })}
                 </div>
+
+
             </div>
-            {/* <img className="h-full w-[40px] md:w-auto object-contain  absolute top-0 right-0 bottom-0" src="/sides.png" /> */}
+            <div className="hidden h-full w-[40px] absolute top-0 right-0 bottom-0 bg-[url('/sides.png')] bg-repeat-y bg-contain md:block" />
+
+            <div className="my-5 md:hidden" />
+            <div className="w-full h-[40px] absolute left-0 bottom-5 bg-[url('/sides-mobile.svg')] bg-repeat-x bg-contain md:hidden " />
+
 
         </div>
     )
