@@ -23,10 +23,16 @@ export default {
             type: "text",
         },
         {
+            name: "buttonName",
+            title: "Button name",
+            description: "Name for the button",
+            type: "string",
+        },
+        {
             name: "url",
             title: "URL",
             description: "URL for the item",
-            type: "url",
+            type: "string",
         },
     ],
 }

@@ -4,5 +4,6 @@ export type CTAItemType = {
     icon: SanityAsset;
     title: string;
     description: string;
+    buttonName?: string;
     url: string;
 }

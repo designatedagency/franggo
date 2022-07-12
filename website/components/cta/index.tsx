@@ -27,8 +27,8 @@ export const CTA: FC<{
                                             <h4 className="font-medium">{ctaItem.title}</h4>
                                         </div>
                                         <p>{ctaItem.description}</p>
-                                        <a href="#ft-open">
-                                            <Button variant="primary">Reserveren</Button>
+                                        <a target={ctaItem.url?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaItem.url ? ctaItem.url : "#ft-open"}>
+                                            <Button variant="primary">{ctaItem.buttonName ? ctaItem.buttonName : "Reserveren"}</Button>
                                         </a>
                                     </div>
                                 )

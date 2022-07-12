@@ -24,7 +24,7 @@ export const Menu: FC<{
             </div>
             <div className="relative w-full max-w-page p-8 z-10">
 
-                <div className="hidden h-full w-[40px] absolute top-0 left-0 bottom-0 bg-[url('/sides.png')] bg-repeat-y bg-contain md:block" />
+                <div className="hidden h-full w-[60px] absolute top-0 left-0 bottom-0 bg-[url('/sides.png')] bg-repeat-y bg-contain md:block" />
 
                 <div className=" p-0 md:p-8 grid grid-cols-1  gap-8">
                     {page?.menuTop?.map((menuGroup, i) => {
@@ -129,7 +129,7 @@ export const Menu: FC<{
 
 
             </div>
-            <div className="hidden h-full w-[40px] absolute top-0 right-0 bottom-0 bg-[url('/sides.png')] bg-repeat-y bg-contain md:block" />
+            <div className="hidden h-full w-[60px] absolute top-0 right-0 bottom-0 bg-[url('/sides.png')] bg-repeat-y bg-contain md:block" />
 
             <div className="my-5 md:hidden" />
             <div className="w-full h-[40px] absolute left-0 bottom-5 bg-[url('/sides-mobile.svg')] bg-repeat-x bg-contain md:hidden " />
