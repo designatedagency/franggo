@@ -1,9 +1,9 @@
-import '../styles/globals.scss'
-import type { AppProps } from 'next/app'
+import { GoogleTagManager } from '@next/third-parties/google';
 import moment from 'moment';
-import { strings } from '../lib/constants/languages/strings';
+import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-
+import { strings } from '../lib/constants/languages/strings';
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -11,7 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   strings.setLanguage(router.locale ? router.locale.split("-")[0] : "nl");
   moment.locale(strings.getLanguage());
 
-  return <Component {...pageProps} />
+  return <>
+    <Component {...pageProps} />
+    <GoogleTagManager gtmId="GTM-MCTQDSQM" />
+  </>
 }
 
 export default MyApp

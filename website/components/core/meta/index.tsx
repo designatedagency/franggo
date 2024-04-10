@@ -1,7 +1,7 @@
-import React, { FC } from "react";
 import Head from "next/head";
-import { Meta as Props } from "../../../lib/types/base/meta.type";
+import { FC } from "react";
 import { imageUrlFor } from "../../../lib/helpers/sanity-helpers";
+import { Meta as Props } from "../../../lib/types/base/meta.type";
 
 export const Meta: FC<{
     tags: Props;
@@ -24,7 +24,6 @@ export const Meta: FC<{
                 <meta property="twitter:title" content={tags?.title} />
                 <meta property="twitter:description" content={tags?.description} />
                 <meta property="twitter:image" content={imageUrlFor(tags?.image)} />
-                <script defer data-domain="franggo.nl" src="https://plausible.io/js/plausible.js"></script>
             </Head>
         </>
     );
