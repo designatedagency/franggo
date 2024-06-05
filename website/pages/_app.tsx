@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Component {...pageProps} />
 
     {/* Cookiebot recurrance fix */}
-    <Script strategy="beforeInteractive" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7431cf9b-4fcd-418a-b2a5-49f8e888a261" data-blockingmode="auto" type="text/javascript"></Script>
+    <Script strategy="beforeInteractive" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7431cf9b-4fcd-418a-b2a5-49f8e888a261" data-blockingmode="auto"></Script>
 
     <GoogleTagManager gtmId="GTM-MCTQDSQM" />
   </>
