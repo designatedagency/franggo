@@ -13,10 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return <>
     <Component {...pageProps} />
-
-    {/* Cookiebot recurrance fix */}
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7431cf9b-4fcd-418a-b2a5-49f8e888a261" data-blockingmode="auto" type="text/javascript" async></script>
-
     <GoogleTagManager gtmId="GTM-MCTQDSQM" />
   </>
 }
