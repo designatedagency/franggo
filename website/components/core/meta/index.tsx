@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from 'next/script';
 import { FC } from "react";
 import { imageUrlFor } from "../../../lib/helpers/sanity-helpers";
 import { Meta as Props } from "../../../lib/types/base/meta.type";
@@ -12,9 +11,6 @@ export const Meta: FC<{
             <Head>
                 <title>{tags?.title}</title>
                 <link rel="icon" href={"/favicon.png"} />
-
-                {/* Cookiebot recurrance fix */}
-                <Script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7431cf9b-4fcd-418a-b2a5-49f8e888a261" data-blockingmode="auto" type="text/javascript"></Script>
 
                 <meta name="title" content={tags?.title} />
                 <meta name="description" content={tags?.description} />
