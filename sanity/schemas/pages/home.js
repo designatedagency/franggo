@@ -43,6 +43,20 @@ export default {
             type: "image",
             group: "hero",
         },
+        {
+            name: "primaryCta",
+            title: "Primary call to action",
+            description: "Primary call to action for the hero",
+            type: "url",
+            group: "hero",
+        },
+        {
+            name: "secondaryCta",
+            title: "Secondary call to action",
+            description: "Secondary call to action for the hero",
+            type: "url",
+            group: "hero",
+        },
 
         // about us
         {
