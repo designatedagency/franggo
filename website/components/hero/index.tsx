@@ -14,7 +14,7 @@ export const Hero: FC<{
     const { image, logo, primaryButton, secondaryButton, ...filteredProps } = props;
 
     return (
-        <div {...filteredProps} className={createClassName(props, `h-[700px] sm:h-[800px] flex justify-center  bg-cover bg-center`)} style={{ backgroundImage: `url(${imageUrlFor(image)})` }}>
+        <div {...filteredProps} className={createClassName(props, `h-[550px] sm:h-[800px] flex justify-center  bg-cover bg-center`)} style={{ backgroundImage: `url(${imageUrlFor(image)})` }}>
             <div className={`flex justify-center w-full max-w-page p-8 z-10 relative`} >
                 <div className="wrapper flex flex-col gap-9 justify-center">
                     <img className="w-full mx-auto md:w-[70%] object-contain" src={imageUrlFor(logo)} />

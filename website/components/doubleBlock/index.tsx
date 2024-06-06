@@ -28,7 +28,7 @@ export const DoubleBlock: FC<{
                         : null}
                     <div className="flex flex-col gap-8 justify-start">
                         <div className=" h-fit">
-                            <p className="uppercase font-heading">{doubleBlock?.tag}</p>
+                            <p className="uppercase font-heading text-white">{doubleBlock?.tag}</p>
                             <h1 className=" font-heading text-white font-bold ">{doubleBlock?.title}</h1>
                         </div>
                         <div className="flex flex-col gap-8 h-fit">

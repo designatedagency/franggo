@@ -31,23 +31,23 @@ export const Menu: FC<{
                         return (
                             <div key={i} className="flex flex-col w-full gap-8 items-center justify-end border-b border-black pb-8">
 
-                                <div className="flex flex-col w-full gap-12 justify-start items-start ">
-                                    <div className="flex flex-row justify-between w-full gap-4">
+                                <div className="top flex flex-col w-full gap-[30px] justify-start items-start ">
+                                    <div className="group flex flex-row justify-between w-full gap-4">
                                         <p className=" text-center font-bold text-3xl font-heading whitespace-nowrap">{menuGroup.title}</p>
                                         {menuGroup.groupPrice ? <p className=" text-center text-3xl font-heading whitespace-nowrap text-franggo-orange">€ {menuGroup.groupPrice}</p> : null}
                                     </div>
-                                    <div className="flex flex-col gap-4 w-full">
+                                    <div className="flex flex-col gap-5 w-full">
                                         {menuGroup.groupPrice ? menuGroup.menuItems.map((menuItem, i) => {
                                             return (
-                                                <div key={i} className="flex flex-col md:flex-row justify-between gap-2 md:gap-8 items-start md:items-center ">
-                                                    <h4 className="text-xl">{menuItem.title}</h4>
+                                                <div key={i} className="item flex flex-col md:flex-row justify-between gap-2 md:gap-8 items-start md:items-center ">
+                                                    <h4 className="text-base">{menuItem.title}</h4>
                                                 </div>
                                             )
                                         }) : menuGroup.menuItems.map((menuItem, i) => {
                                             return (
-                                                <div key={i} className="flex flex-col md:flex-row justify-between gap-2 md:gap-8 items-start md:items-center ">
-                                                    <h4 className="text-xl">{menuItem.title}</h4>
-                                                    <p className="font-heading text-xl whitespace-nowrap text-franggo-orange">€ {menuItem.price}</p>
+                                                <div key={i} className="item flex flex-row md:flex-row justify-between gap-5 md:gap-8 items-start md:items-center ">
+                                                    <h4 className="text-base">{menuItem.title}</h4>
+                                                    <p className="font-heading text-base whitespace-nowrap text-franggo-orange">€ {menuItem.price}</p>
                                                 </div>
                                             )
                                         })}
@@ -98,12 +98,12 @@ export const Menu: FC<{
                         return (
                             <div key={i} className="flex flex-col w-full gap-8 items-center justify-end border-b border-black pb-8">
 
-                                <div className="flex flex-col w-full gap-12 justify-start items-start ">
+                                <div className="flex flex-col w-full gap-[30px] justify-start items-start ">
                                     <div className="flex flex-row justify-between w-full gap-4">
                                         <p className=" text-center font-bold text-3xl font-heading whitespace-nowrap">{menuGroup.title}</p>
                                         {menuGroup.groupPrice ? <p className=" text-center text-3xl font-heading whitespace-nowrap">€ {menuGroup.groupPrice}</p> : null}
                                     </div>
-                                    <div className="flex flex-col gap-4 w-full">
+                                    <div className="flex flex-col gap-5 w-full">
                                         {menuGroup.groupPrice ? menuGroup.menuItems.map((menuItem, i) => {
                                             return (
                                                 <div key={i} className="flex flex-col md:flex-row justify-between gap-2 md:gap-8 items-start md:items-center ">
@@ -112,8 +112,8 @@ export const Menu: FC<{
                                             )
                                         }) : menuGroup.menuItems.map((menuItem, i) => {
                                             return (
-                                                <div key={i} className="flex flex-col md:flex-row justify-between gap-2 md:gap-8 items-start md:items-center ">
-                                                    <h4 className="text-xl">{menuItem.title}</h4>
+                                                <div key={i} className="flex flex-row justify-between gap-5 md:gap-8 items-start md:items-center ">
+                                                    <h4 className="text-base">{menuItem.title}</h4>
                                                     <p className="font-heading text-xl whitespace-nowrap text-franggo-orange">€ {menuItem.price}</p>
                                                 </div>
                                             )

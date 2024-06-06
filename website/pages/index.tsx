@@ -35,7 +35,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Header global={data.global} />
       <Hero image={data.page.bgImage} logo={data.page.logo} primaryButton={data.page.primaryCta} secondaryButton={data.page.secondaryCta} />
       <DoubleBlock doubleBlock={data.page.introBlock} />
-      <Locaties locations={props.data.locations} />
+      <Locaties hideButton={true} locations={props.data.locations} />
       <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
       <Menu page={data.menuPage} menuGroups={props.data.menuGroups} />
       <CTA ctaBlock={data.page.ctaBlock} />

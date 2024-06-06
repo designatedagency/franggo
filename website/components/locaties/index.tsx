@@ -16,43 +16,68 @@ export const Locaties: FC<{
     const { locations, hideText, hideButton, sticker, showMap, ...filteredProps } = props;
 
     return (
-        <div {...filteredProps} className={createClassName(props, "flex flex-col items-center justify-center bg-franggo-orange relative")}>
+        <div {...filteredProps} className={createClassName(props, "flex flex-col px-5 items-center justify-center bg-white relative")}>
 
-            {/* <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/leftnew.png" /> */}
             {!hideText ?
-                <div className="w-full max-w-page flex justify-start px-8 pt-16">
-                    <img className="h-[80px]" src="/locations-text.svg" />
+                <div className="w-full max-w-page flex justify-start mb-8 pt-[53px]">
+                    <h2 className="font-extrabold text-4xl uppercase">Our locations</h2>
                 </div>
                 : null}
-            <div className="w-full max-w-page px-8 py-16 z-10">
-                <div className={`bg-white p-8 grid ${showMap ? `grid-cols-1 ` : `grid-cols-1 md:grid-cols-2`}  gap-8`}>
+            <div className="w-full max-w-page  z-10">
+                <div className={`grid ${showMap ? `grid-cols-1 ` : `grid-cols-1 md:grid-cols-2`}  gap-8`}>
                     {locations?.map((location, i) => {
                         return (
-                            <div key={i} className={`grid  gap-8 ${showMap ? `grid-cols-1 md:grid-cols-2 ` : `grid-cols-1 `}`}>
+                            <div key={i} className={`grid ${showMap ? `grid-cols-1 md:grid-cols-2 ` : `grid-cols-1 `}`}>
                                 <div className="flex">
                                     <img className="w-full h-64 md:h-full md:aspect-[3/2] object-cover" src={imageUrlFor(location.image)} /></div>
-                                <div className="flex flex-col justify-between">
+                                <div className="flex flex-col justify-between border px-5 py-6 rounded-b-lg">
                                     <div className="flex flex-col gap-4">
-                                        <p className="uppercase font-heading">{location.street.includes("Sweelinckstraat") ? "Walk in" : "Restaurant"}</p>
+                                        {/* <p className="uppercase text-[28px] font-extrabold font-heading">{location.street.includes("Sweelinckstraat") ? "Walk in" : "Restaurant"}</p> */}
                                         <div className="flex flex-col sm:flex-row w-full justify-between gap-4 items-start sm:items-center">
-                                            <h3 className="font-medium">{location.title}</h3>
-                                            <div className="flex flex-row gap-4">
+                                            <h3 className="font-extrabold font-heading text-[28px] uppercase">{location.title}</h3>
+                                            <div className="flex flex-col md:flex-row gap-8 mb-5">
+                                                <div>
+                                                    <p className="text-base font-extralight">{location.street}</p>
+                                                    <p className="text-base font-light">{`${location.zip}, ${location.city}`}</p>
+                                                </div>
+                                                <div>
+                                                    <a href={`tel:${location.phone}`} className="cursor-pointer text-base font-light">{location.phone}</a>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-row gap-4 w-full mb-10">
                                                 {hideButton ? null : <Link href='/locations'><Button variant="secondary">Meer info</Button></Link>}
-                                                {location.title === 'Franggo De Pijp' ? <a target={'_blank'} rel="noreferrer" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share"><Button variant="primary">Walk in</Button></a> : <a href="#ft-open">
-                                                    <Button variant="primary">Reserveren</Button>
-                                                </a>}
+                                                {location.title === 'Franggo De Pijp' ? 
+                                                        <div className="flex flex-col gap-2 w-full">
+                                                            <a target={'_blank'} className="w-full" rel="noreferrer" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share">
+                                                                <Button variant="primary" fullSize={true}>Walk in</Button>
+                                                            </a>
+                                                            <p className="text-xs font-light">Feel free to walk in and enjoy our chicken</p>
+                                                        </div>
+                                                        : 
+                                                        <a href="#ft-open" className="w-full">
+                                                            <Button variant="primary" fullSize={true}>BOOK A TABLE</Button>
+                                                        </a>
+                                                    }
 
                                             </div>
-                                        </div>
-                                        <div className="flex flex-col md:flex-row gap-8">
-                                            <div>
-                                                <p>{location.street}</p>
-                                                <p>{`${location.zip}, ${location.city}`}</p>
+                                            <div className="order-now-section w-full">
+                                                <h4 className="uppercase font-extrabold font-heading text-xl mb-[26px]">Order now</h4>
+                                                <div className="flex flex-col gap-2.5">
+                                                    <a target={'_blank'} className="w-full" rel="noreferrer" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share">
+                                                        <Button variant="logo" fullSize={true}>
+                                                            <img className="h-[46px] object-cover" alt="uber ets logo" src="uber-eats-logo.png" />
+                                                        </Button>
+                                                    </a>
+
+                                                    <a target={'_blank'} className="w-full" rel="noreferrer" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share">
+                                                        <Button variant="logo" fullSize={true}>
+                                                            <img className="h-[46px] object-cover" alt="thuisbezorgd logo" src="thuisbezorgd-logo.png" />
+                                                        </Button>
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <a href={`tel:${location.phone}`} className="cursor-pointer">{location.phone}</a>
-                                            </div>
                                         </div>
+                           
                                     </div>
                                     {showMap ? <div className="h-[250px] mt-8">
                                         <iframe style={{ border: 0 }} width="100%" height="100%" src={`https://maps.google.com/maps?q=${location.street}-${location.city}&t=&z=13&ie=UTF8&iwloc=&output=embed`}></iframe>
