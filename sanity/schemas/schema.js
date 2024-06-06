@@ -12,6 +12,7 @@ import { localeRichText, localeString, localeText } from "./utils/locale"
 import portableText from "./utils/portableText"
 import youtubeVimeoBlock from "./utils/youtubeVimeoBlock"
 import doubleBlock from "./utils/doubleBlock"
+import richtText from './utils/richText'
 import menuGroup from "./types/menuGroup"
 import menuItem from "./types/menuItem"
 import openingTime from "./utils/openingTime"
@@ -40,6 +41,7 @@ export default createSchema({
         /* Your types here! */
 
         // utilities
+        richtText,
         meta,
         button,
         portableText,

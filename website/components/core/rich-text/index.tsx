@@ -54,10 +54,9 @@ export const RichText: FC<{
     };
 
     return (
-        <div className="w-[100%] rt">
+        <div className={`w-[100%] rt ${className}`}>
             {/* @ts-ignore */}
             <BlockContent blocks={richText} serializers={serializers} />
         </div>
-
     )
 }

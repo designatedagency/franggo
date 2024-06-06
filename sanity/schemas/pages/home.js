@@ -12,6 +12,10 @@ export default {
             title: "Hero",
         },
         {
+            name: "intro",
+            title: "Intro",
+        },
+        {
             name: "info",
             title: "Information",
         },
@@ -46,16 +50,22 @@ export default {
         {
             name: "primaryCta",
             title: "Primary call to action",
-            description: "Primary call to action for the hero",
-            type: "doubleBlock",
+            type: "button",
             group: "hero",
         },
         {
             name: "secondaryCta",
             title: "Secondary call to action",
-            description: "Secondary call to action for the hero",
-            type: "doubleBlock",
+            type: "button",
             group: "hero",
+        },
+        // about us
+        {
+            name: "introBlock",
+            title: "Text and image block",
+            description: "Setup the text and image block for the page",
+            type: "doubleBlock",
+            group: "intro",
         },
 
         // about us
