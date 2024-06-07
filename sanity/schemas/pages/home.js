@@ -84,5 +84,5 @@ export default {
             type: "ctaBlock",
             group: "cta",
         },
-    ],
+    ],  
 }

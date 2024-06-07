@@ -15,29 +15,18 @@ export const CTA: FC<{
                 <div className="bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="flex flex-col gap-8 justify-between">
                         <div className=" h-fit">
-                            <p className="uppercase font-heading">{ctaBlock?.tag}</p>
-                            <h1 className=" font-heading font-bold ">{ctaBlock?.title}</h1>
+                            <h1 className=" font-heading font-extrabold uppercase mb-4 font-[34px]">{ctaBlock?.title}</h1>
+                            <p className="uppercase font-heading text-base">{ctaBlock?.description}</p>
                         </div>
-                        <div className="flex flex-col md:grid grid-cols-2 gap-8 h-fit">
-                            {ctaBlock?.ctaItems.map((ctaItem, i) => {
-                                return (
-                                    <div key={i} className="flex flex-col gap-8">
-                                        <div className="flex gap-4 items-center">
-                                            <img src={imageUrlFor(ctaItem.icon)} className="w-8 h-8" />
-                                            <h4 className="font-medium">{ctaItem.title}</h4>
-                                        </div>
-                                        <p>{ctaItem.description}</p>
-                                        <a target={ctaItem.url?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaItem.url ? ctaItem.url : "#ft-open"}>
-                                            <Button variant="primary">{ctaItem.buttonName ? ctaItem.buttonName : "Reserveren"}</Button>
-                                        </a>
-                                    </div>
-                                )
-                            })}
+                        <div className="flex flex-col gap-2.5 w-full">
+                            <a className="w-full" target={ctaBlock?.button_one?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock?.button_one?.link ? ctaBlock?.button_one.link : "#ft-open"}>
+                                <Button fullSize={true} textTransform="uppercase" variant="primary">{ctaBlock?.button_one?.name ? ctaBlock?.button_one?.name : "Reserveren"}</Button>
+                            </a>
+                            <a className="w-full" target={ctaBlock?.button_two?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock?.button_two?.link ? ctaBlock?.button_two.link : "#ft-open"}>
+                                <Button fullSize={true} textTransform="uppercase" variant="secondary">{ctaBlock?.button_two?.name ? ctaBlock?.button_two?.name : "Reserveren"}</Button>
+                            </a>
                         </div>
 
-                    </div>
-                    <div>
-                        <img className="h-full w-full object-cover" src={imageUrlFor(ctaBlock?.image)} />
                     </div>
                 </div>
             </div>

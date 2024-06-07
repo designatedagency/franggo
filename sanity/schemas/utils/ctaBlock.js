@@ -5,29 +5,28 @@ export default {
 
     fields: [
         {
-            name: "tag",
-            title: "Tag",
-            description: "Tag for the block",
-            type: "string",
-        },
-        {
             name: "title",
             title: "Title",
-            description: "Title for the block",
+            description: "",
             type: "string",
         },
         {
-            name: "image",
-            title: "Image",
-            description: "Image for the block",
-            type: "image",
+            name: "description",
+            title: "Description",
+            description: "",
+            type: "text",
         },
         {
-            name: "ctaItems",
-            title: "CTA items",
-            description: "CTA items for the block",
-            type: "array",
-            of: [{ type: "ctaItem" }],
+            name: "button_one",
+            title: "Button 1",
+            description: "",
+            type: "button",
+        },
+        {
+            name: "button_two",
+            title: "Button 2",
+            description: "",
+            type: "button",
         },
     ],
 }

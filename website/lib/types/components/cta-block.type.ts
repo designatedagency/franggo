@@ -1,9 +1,8 @@
-import { SanityAsset } from "@sanity/asset-utils";
-import { CTAItemType } from "./cta-item.type";
+import { Button } from "./button.type";
 
 export type CTABlockType = {
-    tag: string;
     title: string;
-    ctaItems: CTAItemType[];
-    image: SanityAsset;
+    description: string;
+    button_one: Button;
+    button_two: Button;
 }
