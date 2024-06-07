@@ -1,6 +1,6 @@
 export default {
-    name: "locations",
-    title: "Locations",
+    name: "order",
+    title: "Order Now",
     type: "document",
     groups: [
         {
@@ -58,13 +58,6 @@ export default {
             description: "Setup the text and image block for the page",
             type: "doubleBlock",
             group: "info",
-        },
-        {
-            name: "ctaBlock",
-            title: "Call to action block",
-            description: "Setup the call to action block for the page",
-            type: "ctaBlock",
-            group: "cta",
-        },
+        }
     ],
 }

@@ -38,7 +38,7 @@ export default function Home(props: SanityNextStaticProps<PageProps>) {
       <Locaties hideButton={true} locations={props.data.locations} />
       <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
       <Menu page={data.menuPage} menuGroups={props.data.menuGroups} />
-      <CTA ctaBlock={data.page.ctaBlock} />
+      <CTA small ctaBlock={data.page.ctaBlock} />
 
       <Footer locations={props.data.locations} global={data.global} />
 

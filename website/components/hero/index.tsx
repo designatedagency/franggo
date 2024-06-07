@@ -14,21 +14,23 @@ export const Hero: FC<{
     const { image, logo, primaryButton, secondaryButton, ...filteredProps } = props;
 
     return (
-        <div {...filteredProps} className={createClassName(props, `h-[550px] sm:h-[800px] flex justify-center  bg-cover bg-center`)} style={{ backgroundImage: `url(${imageUrlFor(image)})` }}>
-            <div className={`flex justify-center w-full max-w-page p-8 z-10 relative`} >
-                <div className="wrapper flex flex-col gap-9 justify-center">
-                    <img className="w-full mx-auto md:w-[70%] object-contain" src={imageUrlFor(logo)} />
-                    <div className="buttons-wrapper flex gap-4 flex-wrap justify-center">
-                        <a target={primaryButton?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={primaryButton?.link ? primaryButton.link : "#ft-open"}>
-                            <HtmlButton textTransform="uppercase" variant="primary">{primaryButton?.name ? primaryButton?.name : "Reserveren"}</HtmlButton>
-                        </a>
-                        <a target={secondaryButton?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={secondaryButton?.link ? secondaryButton.link : "#ft-open"}>
-                            <HtmlButton textTransform="uppercase" variant="secondary">{secondaryButton?.name ? secondaryButton?.name : "Reserveren"}</HtmlButton>
-                        </a>
+        <div {...filteredProps} className={createClassName(props, `h-[550px] sm:h-[800px] flex relative justify-center  bg-cover bg-center`)} style={{ backgroundImage: `url(${imageUrlFor(image)})` }}>
+            <div className="w-full h-full bg-black/30 z-10 flex items-center justify-center">
+                <div className={`flex justify-center w-full h-full max-w-page p-8`} >
+                    <div className="wrapper flex flex-col gap-9 justify-center">
+                        <img className="w-full mx-auto md:w-[70%] object-contain" src={imageUrlFor(logo)} />
+                        <div className="buttons-wrapper flex gap-4 flex-wrap justify-center">
+                            <a target={primaryButton?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={primaryButton?.link ? primaryButton.link : "#ft-open"}>
+                                <HtmlButton textTransform="uppercase" variant="primary">{primaryButton?.name ? primaryButton?.name : "Reserveren"}</HtmlButton>
+                            </a>
+                            <a target={secondaryButton?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={secondaryButton?.link ? secondaryButton.link : "#ft-open"}>
+                                <HtmlButton textTransform="uppercase" variant="secondary">{secondaryButton?.name ? secondaryButton?.name : "Reserveren"}</HtmlButton>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div className="absolute w-[130px] h-[130px] left-0 -bottom-2">
-                    <img className="w-[130px] object-contain absolute left-[0px] top-[0px]" src="/uber-eats-award.svg" />
+                    <div className="absolute w-[130px] h-[130px] left-0 -bottom-2">
+                        <img className="w-[130px] object-contain absolute left-[0px] top-[0px]" src="/uber-eats-award.svg" />
+                    </div>
                 </div>
             </div>
         </div>

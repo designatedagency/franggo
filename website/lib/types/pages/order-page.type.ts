@@ -3,7 +3,7 @@ import { Meta } from "../base/meta.type";
 import { DoubleBlockType } from "../components/double-block.type";
 import { CTABlockType } from '../components/cta-block.type'
 
-export type LocationsPageType = {
+export type OrderPageType = {
     meta: Meta;
     title?: string;
     subtitle?: string;

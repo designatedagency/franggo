@@ -26,19 +26,19 @@ export const DoubleBlock: FC<{
                             <img className="h-full w-full object-cover" src={imageUrlFor(doubleBlock?.image)} />
                         </div>
                         : null}
-                    <div className="flex flex-col gap-8 justify-start">
+                    <div className="flex flex-col gap-2 justify-start">
                         <div className=" h-fit">
                             <p className="uppercase font-heading text-white">{doubleBlock?.tag}</p>
-                            <h1 className=" font-heading text-white font-bold ">{doubleBlock?.title}</h1>
+                            <h1 className=" font-heading uppercase text-white font-bold ">{doubleBlock?.title}</h1>
                         </div>
                         <div className="flex flex-col gap-8 h-fit">
-                            <RichText className="!text-white" richText={doubleBlock?.text} />
+                            <RichText className="!text-white !font-medium" richText={doubleBlock?.text} />
                             {doubleBlock?.label ? <a href={doubleBlock?.url} rel="noreferrer" target={doubleBlock?.url?.includes("http") ? "_blank" : "_self"}><Button className="w-fit" variant="secondary">{doubleBlock?.label}</Button></a> : null}
                         </div>
                     </div>
                     {!flipped ?
                         <div>
-                            <img className="h-full w-full object-cover" src={imageUrlFor(doubleBlock?.image)} />
+                            <img className="h-full w-full object-cover aspect-square" src={imageUrlFor(doubleBlock?.image)} />
                         </div>
                         : null}
                 </div>

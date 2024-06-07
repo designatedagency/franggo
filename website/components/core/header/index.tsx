@@ -66,6 +66,9 @@ export const Header: FC<{
                     <Link href="/locations">
                         <p className={`transition-all text-3xl lg:text-xl font-heading font-medium hover:text-franggo-orange cursor-pointer ${router.pathname === "/locations" ? " text-franggo-orange " : "text-white"}`}>Locations</p >
                     </Link>
+                    <Link href="/order">
+                        <p className={`transition-all text-3xl lg:text-xl font-heading font-medium hover:text-franggo-orange cursor-pointer ${router.pathname === "/order" ? " text-franggo-orange " : "text-white"}`}>Order</p >
+                    </Link>
                     <Link href="/about">
                         <p className={`transition-all text-3xl lg:text-xl font-heading font-medium whitespace-nowrap hover:text-franggo-orange cursor-pointer ${router.pathname === "/about" ? " text-franggo-orange " : "text-white"}`}>About us</p >
                     </Link>

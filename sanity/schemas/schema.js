@@ -22,6 +22,7 @@ import ctaItem from "./utils/ctaItem"
 import menu from "./pages/menu"
 import about from "./pages/about"
 import locations from "./pages/locations"
+import order from "./pages/order"
 import contact from "./pages/contact"
 import career from "./pages/career"
 import careerItem from "./utils/careerItem"
@@ -60,6 +61,7 @@ export default createSchema({
         menu,
         about,
         locations,
+        order,
         contact,
         career,
         faq,

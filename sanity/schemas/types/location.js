@@ -5,6 +5,12 @@ export default {
 
     fields: [
         {
+            name: "comingSoon",
+            title: "Coming soon",
+            description: "Is the restaurant coming soon?",
+            type: "boolean"
+        },
+        {
             name: "title",
             title: "Restaurant name",
             description: "Name for the restaurant",
@@ -15,6 +21,12 @@ export default {
             title: "Restaurant image",
             description: "Image for the restaurant",
             type: "image",
+        },
+        {
+            name: "description",
+            title: "Restaurant description",
+            description: "Description for the restaurant",
+            type: "text",
         },
         {
             name: "street",
@@ -59,5 +71,17 @@ export default {
             type: "array",
             of: [{ type: "openingTime" }],
         },
+        {
+            name: "uberEetsUrl",
+            title: "Uber Eats URL",
+            description: "Uber Eats URL for the restaurant",
+            type: "string",
+        },
+        {
+            name: "thuisbezorgdUrl",
+            title: "Thuisbezorgd URL",
+            description: "Thuisbezorgd URL for the restaurant",
+            type: "string",
+        }
     ],
 }

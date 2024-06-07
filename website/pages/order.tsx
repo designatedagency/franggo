@@ -1,28 +1,26 @@
 import { GetStaticPropsContext } from "next"
 import React from "react"
-import { Block } from "../components/core/block"
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
 import { DoubleBlock } from "../components/doubleBlock"
-import { CTA } from "../components/cta"
 import { Formitable } from "../components/formitable"
 import { Locaties } from "../components/locaties"
 import { SmallHero } from "../components/smallHero"
 import { getNextRevalidation, getSanityNextProps, SanityNextStaticProps, useSanityPreview } from "../lib/helpers/sanity-next-helpers"
 import { GlobalType } from "../lib/types/base/global.type"
-import { LocationsPageType } from "../lib/types/pages/locations-page.type"
+import { OrderPageType } from "../lib/types/pages/order-page.type"
 import { LocationType } from "../lib/types/types/location.type"
 import { MenuGroupType } from "../lib/types/types/menu-group.type"
 
 type PageProps = {
-    page: LocationsPageType;
+    page: OrderPageType;
     locations: LocationType[];
     global: GlobalType;
     menuGroups: MenuGroupType[];
 }
 
-export default function Locations(props: SanityNextStaticProps<PageProps>) {
+export default function Order(props: SanityNextStaticProps<PageProps>) {
 
     const data = useSanityPreview(props);
 
@@ -36,10 +34,9 @@ export default function Locations(props: SanityNextStaticProps<PageProps>) {
 
             <SmallHero small outlineBottom title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
 
-            <Locaties hasDescription hideText paddingY hideButton locations={props.data.locations} />
+            <Locaties hideText paddingY hideButton locations={props.data.locations} />
 
             <DoubleBlock doubleBlock={data.page.textAndImageBlock} />
-            <CTA small ctaBlock={data.page.ctaBlock} />
 
             < Footer locations={props.data.locations} global={data.global} />
 
@@ -55,7 +52,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
             context,
             queries: {
                 page: {
-                    groq: `*[_type == "locations"]`
+                    groq: `*[_type == "order"]`
                 },
                 global: {
                     groq: `*[_type == "global"]`

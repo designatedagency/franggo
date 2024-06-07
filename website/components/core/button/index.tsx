@@ -5,7 +5,7 @@ type ButtonProps = {
     variant: "primary" | "secondary" | "tertiary" | "unstyled" | 'logo';
     textTransform?: "uppercase" | "lowercase" | "capitalize" | "none";
     fullSize?: boolean;
-    loading?: boolean | undefined;
+    loading?: boolean | undefined;  
 }
 
 export const Button: FC<ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {

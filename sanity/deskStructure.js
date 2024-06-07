@@ -15,6 +15,7 @@ import {
     MdShareLocation,
     MdOutlineContactPhone,
     MdWork,
+    MdBorderColor,
     MdQuestionAnswer,
     MdWifiProtectedSetup,
 } from "react-icons/md"
@@ -88,6 +89,16 @@ export default () =>
                                         .documentId("locations")
                                         .title("Locations")
                                         .schemaType("locations")
+                                        .views(documentViews)
+                                ),
+                            S.listItem()
+                                .title("Order")
+                                .icon(MdBorderColor)
+                                .child(
+                                    S.document()
+                                        .documentId("order")
+                                        .title("Order")
+                                        .schemaType("order")
                                         .views(documentViews)
                                 ),
                             S.listItem()
