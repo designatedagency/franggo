@@ -18,7 +18,7 @@ export const Locaties: FC<{
     const { locations, hideText, hideButton, sticker, showMap, paddingY, hasDescription, ...filteredProps } = props;
 
     return (
-        <div {...filteredProps} className={createClassName(props, `flex flex-col px-5 pb-10 ${paddingY ? 'py-10' : ''} items-center justify-center bg-white relative`)}>
+        <div {...filteredProps} id="locations" className={createClassName(props, `flex flex-col px-5 pb-10 ${paddingY ? 'py-10' : ''} items-center justify-center bg-white relative`)}>
 
             {!hideText ?
                 <div className="w-full max-w-page flex justify-start mb-8 pt-[53px]">
