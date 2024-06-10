@@ -32,7 +32,7 @@ export default function MenuPage(props: SanityNextStaticProps<PageProps>) {
             <Formitable />
             <Menu page={data.page} menuGroups={props.data.menuGroups} />
             <CTA small ctaBlock={data.page.ctaBlock} />
-            <DoubleBlock backgroundPattern={true} doubleBlock={data.page.textAndImageBlock} />
+            <DoubleBlock backgroundPattern={false} doubleBlock={data.page.textAndImageBlock} />
             <Footer locations={props.data.locations} global={data.global} />
 
             {/* Exit preview button */}
