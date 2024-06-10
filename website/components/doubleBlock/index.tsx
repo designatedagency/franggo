@@ -19,7 +19,7 @@ export const DoubleBlock: FC<{
             {/* {backgroundPattern || transparant ? null : <img className="h-full rotate-180 w-auto absolute top-0 left-0 bottom-0" src="/graphic/right.svg" />} */}
 
             <div className={`w-full max-w-page px-5 py-[50px] z-10`}>
-                <div className={`grid grid-cols-1 md:grid-cols-2 gap-8`}>
+                <div className={`${!transparant ? "bg-white p-8" : ""} grid grid-cols-1 md:grid-cols-2 gap-8`}>
 
                     {flipped ?
                         <div>
@@ -28,11 +28,11 @@ export const DoubleBlock: FC<{
                         : null}
                     <div className="flex flex-col gap-2 justify-start md:justify-center">
                         <div className=" h-fit">
-                            <p className="uppercase font-heading text-white">{doubleBlock?.tag}</p>
-                            <h1 className=" font-heading uppercase text-white leading-[34px] text-[34px] font-extrabold">{doubleBlock?.title}</h1>
+                            <p className={`${!transparant ? "!text-black" : "!text-white"} uppercase font-heading`}>{doubleBlock?.tag}</p>
+                            <h1 className={`${!transparant ? "!text-black" : "!text-white"} font-heading uppercase leading-[34px] text-[34px] font-extrabold`}>{doubleBlock?.title}</h1>
                         </div>
                         <div className="flex flex-col gap-8 h-fit">
-                            <RichText className="!text-white !font-medium" richText={doubleBlock?.text} />
+                            <RichText className={`${!transparant ? "!text-black" : "!text-white"} !font-medium`} richText={doubleBlock?.text} />
                             {doubleBlock?.label ? <a href={doubleBlock?.url} rel="noreferrer" target={doubleBlock?.url?.includes("http") ? "_blank" : "_self"}><Button className="w-fit" variant="secondary">{doubleBlock?.label}</Button></a> : null}
                         </div>
                     </div>
