@@ -12,7 +12,7 @@ export const Formitable: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = (props) 
     return (
         <div className={createClassName(props, `relative`)}>
 
-            <div className="ft-widget-b2" data-restaurant="aaab3fa3" data-open="1500" data-open-mobile="false" data-color="#f37529" data-language="auto" data-tag="Website" data-toolbar="true" data-toolbar-mobile="true"></div>
+            <div className="ft-widget-b2" data-restaurant="aaab3fa3" data-open="false" data-open-mobile="false" data-color="#f37529" data-language="auto" data-tag="Website" data-toolbar="true" data-toolbar-mobile="true"></div>
 
             <Script
                 id="will-fail"
