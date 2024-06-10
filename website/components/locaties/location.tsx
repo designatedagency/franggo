@@ -27,7 +27,7 @@ export const Location: FC<{
                     </div>
                 ) }
             </div>
-            <div className="flex flex-col flex-1 justify-between border px-5 py-6 rounded-b-lg">
+            <div className="flex flex-col flex-1 justify-between border px-5 py-6 rounded-b-lg rounded-t-lg md:rounded-t-none">
                 <div className="flex flex-col gap-4">
                     {/* <p className="uppercase text-[28px] font-extrabold font-heading">{location.street.includes("Sweelinckstraat") ? "Walk in" : "Restaurant"}</p> */}
                     <div className={`flex flex-col w-full justify-between items-start`}>
