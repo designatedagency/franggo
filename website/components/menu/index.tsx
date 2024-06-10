@@ -69,10 +69,10 @@ export const Menu: FC<{
                         </div>
                         : null}
                     {page?.sauces ?
-                        <div className="w-full h-full p-8 bg-white border-2 border-red-600 text-red-600">
+                        <div className="w-full h-full p-3 sm:p-8 bg-white border-2 border-red-600 text-red-600">
                             <div className="flex justify-between items-start">
-                                <h2 className="mb-5">SAUCES / MOLHOS</h2>
-                                <h2 className="mb-5 text-right">1st SAUCE FREE<br />1st MOLHO LIVRE</h2>
+                                <h2 className="mb-5 sm:w-full">SAUCES / MOLHOS</h2>
+                                <h2 className="mb-5 text-right w-full">1st SAUCE FREE<br />1st MOLHO LIVRE</h2>
                             </div>
                             {page?.sauces.map((supplement, i) => {
                                 return (

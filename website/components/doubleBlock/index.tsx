@@ -26,10 +26,10 @@ export const DoubleBlock: FC<{
                             <img className="h-full w-full object-cover" src={imageUrlFor(doubleBlock?.image)} />
                         </div>
                         : null}
-                    <div className="flex flex-col gap-2 justify-start">
+                    <div className="flex flex-col gap-2 justify-start md:justify-center">
                         <div className=" h-fit">
                             <p className="uppercase font-heading text-white">{doubleBlock?.tag}</p>
-                            <h1 className=" font-heading uppercase text-white font-bold ">{doubleBlock?.title}</h1>
+                            <h1 className=" font-heading uppercase text-white leading-[34px] text-[34px] font-extrabold">{doubleBlock?.title}</h1>
                         </div>
                         <div className="flex flex-col gap-8 h-fit">
                             <RichText className="!text-white !font-medium" richText={doubleBlock?.text} />

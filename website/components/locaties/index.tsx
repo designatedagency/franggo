@@ -70,9 +70,12 @@ export const Locaties: FC<{
                                                             <p className="text-xs font-light">Feel free to walk in and enjoy our chicken</p>
                                                         </div>
                                                         : 
-                                                        <a href="#ft-open" className="w-full">
-                                                            <Button variant="primary" fullSize={true}>BOOK A TABLE</Button>
-                                                        </a>
+                                                        <div className="flex flex-col gap-2 w-full">
+                                                            <a href="#ft-open" className="w-full">
+                                                                <Button variant="primary" fullSize={true}>BOOK A TABLE</Button>
+                                                            </a>
+                                                            <p className="text-xs font-light">Feel free to walk in and enjoy our chicken</p>
+                                                        </div>
                                                     }
 
                                             </div>
