@@ -26,10 +26,10 @@ export const CTA: FC<{
                         </div>
                         <div className="flex flex-col gap-2.5 w-full">
                             <a className="w-full" target={ctaBlock?.button_one?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock?.button_one?.link ? ctaBlock?.button_one.link : "#ft-open"}>
-                                <Button fullSize={true} textTransform="uppercase" variant="primary">{ctaBlock?.button_one?.name ? ctaBlock?.button_one?.name : "Reserveren"}</Button>
+                                <Button fullsize textTransform="uppercase" variant="primary">{ctaBlock?.button_one?.name ? ctaBlock?.button_one?.name : "Reserveren"}</Button>
                             </a>
                             <a className="w-full" target={ctaBlock?.button_two?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock?.button_two?.link ? ctaBlock?.button_two.link : "#ft-open"}>
-                                <Button fullSize={true} textTransform="uppercase" variant="secondary">{ctaBlock?.button_two?.name ? ctaBlock?.button_two?.name : "Reserveren"}</Button>
+                                <Button fullsize textTransform="uppercase" variant="secondary">{ctaBlock?.button_two?.name ? ctaBlock?.button_two?.name : "Reserveren"}</Button>
                             </a>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ import { createClassName } from "../../../lib/helpers/react-helpers";
 type ButtonProps = {
     variant: "primary" | "secondary" | "tertiary" | "unstyled" | 'logo';
     textTransform?: "uppercase" | "lowercase" | "capitalize" | "none";
-    fullSize?: boolean;
+    fullsize?: boolean;
     loading?: boolean | undefined;  
 }
 
@@ -34,13 +34,13 @@ export const Button: FC<ButtonProps & React.ButtonHTMLAttributes<HTMLButtonEleme
                 `capitalize` :
                 `none`; 
 
-    const fullSizeClassNames = props.fullSize ? `w-full` : ``;
+    const fullsizeClassNames = props.fullsize ? `w-full` : ``;
 
     return (
         <button
             {...filteredProps}
             disabled={props.disabled || props.loading}
-            className={createClassName(props, `flex rounded-lg select-none items-center justify-center disabled:opacity-50 px-5 py-4 font-extrabold leading-[18px] text-lg font-heading w-fit focus:outline-1 focus:outline-gray-300 transition-all ${variantClassNames} ${textTransformClassNames} ${fullSizeClassNames}`)}
+            className={createClassName(props, `flex rounded-lg select-none items-center justify-center disabled:opacity-50 px-5 py-4 font-extrabold leading-[18px] text-lg font-heading w-fit focus:outline-1 focus:outline-gray-300 transition-all ${variantClassNames} ${textTransformClassNames} ${fullsizeClassNames}`)}
         >
             {/* Loading icon */}
             {props.loading ? <img alt="loading" src="/ui/loader-round.svg" className="w-6 h-6 mr-2 invert" /> : null}

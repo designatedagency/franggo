@@ -60,16 +60,15 @@ export const Location: FC<{
                                 {location.title === 'Franggo De Pijp' ? 
                                         <div className="flex flex-col gap-2 w-full">
                                             <a target={'_blank'} className="w-full" rel="noreferrer" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share">
-                                                <Button variant="primary" fullSize={true}>Walk in</Button>
+                                                <Button variant="primary" fullsize>Walk in</Button>
                                             </a>
                                             <p className="text-xs font-light">Feel free to walk in and enjoy our chicken</p>
                                         </div>
                                         : 
                                         <div className="flex flex-col gap-2 w-full">
                                             <a href="#ft-open" className="w-full">
-                                                <Button variant="primary" fullSize={true}>BOOK A TABLE</Button>
+                                                <Button variant="primary" fullsize>BOOK A TABLE</Button>
                                             </a>
-                                            <p className="text-xs font-light">Feel free to walk in and enjoy our chicken</p>
                                         </div>
                                     }
 
@@ -78,13 +77,13 @@ export const Location: FC<{
                                 <h4 className="uppercase font-extrabold font-heading text-xl mb-[26px]">Order now</h4>
                                 <div className="flex flex-col gap-2.5">
                                     <a target={'_blank'} className="w-full" rel="noreferrer" href={location.uberEatsUrl ?? 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share'}>
-                                        <Button variant="logo" fullSize={true}>
+                                        <Button variant="logo" fullsize>
                                             <img className="h-[46px] object-cover" alt="uber ets logo" src="uber-eats-logo.png" />
                                         </Button>
                                     </a>
 
                                     <a target={'_blank'} className="w-full" rel="noreferrer" href={location.thuisbezorgdUrl ?? 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share'}>
-                                        <Button variant="logo" fullSize={true}>
+                                        <Button variant="logo" fullsize>
                                             <img className="h-[46px] object-cover" alt="thuisbezorgd logo" src="thuisbezorgd-logo.png" />
                                         </Button>
                                     </a>
