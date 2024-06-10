@@ -82,7 +82,7 @@ export const Locaties: FC<{
                                             <div className="order-now-section w-full">
                                                 <h4 className="uppercase font-extrabold font-heading text-xl mb-[26px]">Order now</h4>
                                                 <div className="flex flex-col gap-2.5">
-                                                    <a target={'_blank'} className="w-full" rel="noreferrer" href={location.ubereatsUrl ?? 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share'}>
+                                                    <a target={'_blank'} className="w-full" rel="noreferrer" href={location.uberEatsUrl ?? 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c609920ca4d593:0x864c464fd816962a?source=g.page.share'}>
                                                         <Button variant="logo" fullSize={true}>
                                                             <img className="h-[46px] object-cover" alt="uber ets logo" src="uber-eats-logo.png" />
                                                         </Button>

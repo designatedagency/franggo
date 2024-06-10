@@ -12,6 +12,6 @@ export type LocationType = {
     email: string;
     reservationUrl: string;
     openingTimes: string[];
-    ubereatsUrl?: string;
+    uberEatsUrl?: string;
     thuisbezorgdUrl?: string;
 }

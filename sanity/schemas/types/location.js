@@ -72,7 +72,7 @@ export default {
             of: [{ type: "openingTime" }],
         },
         {
-            name: "uberEetsUrl",
+            name: "uberEatsUrl",
             title: "Uber Eats URL",
             description: "Uber Eats URL for the restaurant",
             type: "string",
