@@ -7,7 +7,6 @@ export default {
             name: "seo",
             title: "SEO",
         },
-
         {
             name: "info",
             title: "Information",
@@ -16,6 +15,10 @@ export default {
             name: "menu",
             title: "Menu",
         },
+        {
+            name: "cta",
+            title: "CTA"
+        }
     ],
     fields: [
         // SEO
@@ -75,6 +78,13 @@ export default {
             type: "array",
             of: [{ type: "reference", to: [{ type: "menuGroup" }] }],
             group: "menu",
+        },
+        {
+            name: "ctaBlock",
+            title: "Call to action block",
+            description: "Setup the call to action block for the page",
+            type: "ctaBlock",
+            group: "cta",
         },
     ],
 }

@@ -2,6 +2,7 @@ import { GetStaticPropsContext } from "next"
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
+import { CTA } from "../components/cta"
 import { DoubleBlock } from "../components/doubleBlock"
 import { Formitable } from "../components/formitable"
 import { Menu } from "../components/menu"
@@ -30,6 +31,7 @@ export default function MenuPage(props: SanityNextStaticProps<PageProps>) {
             <Header />
             <Formitable />
             <Menu page={data.page} menuGroups={props.data.menuGroups} />
+            <CTA small ctaBlock={data.page.ctaBlock} />
             <DoubleBlock backgroundPattern={true} doubleBlock={data.page.textAndImageBlock} />
             <Footer locations={props.data.locations} global={data.global} />
 

@@ -112,18 +112,18 @@ export const Header: FC<{
 
                 </div>
                 <div className='hidden lg:flex gap-5 items-center justify-center'>
-                    <Link href={'/contact'} >
+                    <Link href={'/order'} >
                         <Button className="w-auto text-3xl !text-white !p-0" variant="unstyled">
                             <div className="relative mr-2 w-5 h-5">
                                 <img className="w-5 h-5 absolute transition-all left-0 group-hover:left-1" src="/icons/shopping-card.svg" />
                             </div>
                             <p className='font-heading font-bold text-3xl lg:text-xl '>
-                                Bestellen
+                                Order
                             </p>
                         </Button>
                     </Link>
                     <a href="#ft-open">
-                        <Button className="w-auto text-xl" variant="primary">Reserveren</Button>
+                        <Button className="w-auto text-xl" variant="primary">Reserve</Button>
                     </a>
                 </div>
             </div>

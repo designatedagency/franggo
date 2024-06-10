@@ -22,7 +22,7 @@ export const Location: FC<{
             <div className="flex relative">
                 <img className="w-full hidden md:block aspect-[5/4] md:aspect-[3/2] object-cover" alt="location image" src={imageUrlFor(location.image)} />
                 { location.comingSoon && (
-                    <div className="absolute hidden md:block w-[101px] h-[101px] -top-[14px] -right-[14px] rounded-full bg-[#FFEF5D] flex items-center justify-center text-center">
+                    <div className="absolute hidden md:flex w-[101px] h-[101px] -top-[14px] -right-[14px] rounded-full bg-[#FFEF5D] items-center justify-center text-center">
                         <span className="font-heading font-extrabold text-[21px] leading-[21px]">COMING SOON</span>
                     </div>
                 ) }
@@ -90,12 +90,12 @@ export const Location: FC<{
                                     </a>
                                 </div>
                             </div>
+                            {showMap ? <div className="h-[250px] mt-8">
+                                <iframe style={{ border: 0 }} width="100%" height="100%" src={`https://maps.google.com/maps?q=${location.street}-${location.city}&t=&z=13&ie=UTF8&iwloc=&output=embed`}></iframe>
+                            </div> : null}
                         </div>
                     </div>
                 </div>
-                {showMap ? <div className="h-[250px] mt-8">
-                    <iframe style={{ border: 0 }} width="100%" height="100%" src={`https://maps.google.com/maps?q=${location.street}-${location.city}&t=&z=13&ie=UTF8&iwloc=&output=embed`}></iframe>
-                </div> : null}
             </div>
         </div>
     )

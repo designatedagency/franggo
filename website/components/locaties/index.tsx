@@ -26,7 +26,7 @@ export const Locaties: FC<{
                 : null}
             <div className="w-full max-w-page  z-10">
                 <div className={`grid grid-cols-1 md:grid-cols-2 gap-8`}>
-                    {locations?.map((location, i) => <Location key={i} showMap={showMap} hideButton={hideButton}  hasDescription={hasDescription} location={location}></Location>)}
+                    {locations?.sort((a, b) => b.comingSoon ? -1 : 0)?.map((location, i) => <Location key={i} showMap={showMap} hideButton={hideButton}  hasDescription={hasDescription} location={location}></Location>)}
                 </div>
             </div>
             {/* <img className="h-full w-auto absolute top-0 right-0 bottom-0" src="/rightnew.png" /> */}

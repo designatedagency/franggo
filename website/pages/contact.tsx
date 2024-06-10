@@ -33,7 +33,7 @@ export default function Contact(props: SanityNextStaticProps<PageProps>) {
             <Header />
             <Formitable />
             <SmallHero title={data.page.title} description={data.page.subtitle} image={data.page.bgImage} />
-            <Locaties hideButton sticker showMap hideText locations={data.locations} />
+            <Locaties paddingY hideButton sticker showMap hideText locations={data.locations} />
             {/* <Block>
 
                 {data.locations.map((location, i) => {
