@@ -23,7 +23,7 @@ export const Footer: FC<{
                         <img src={global?.footerLogo ? imageUrlFor(global.footerLogo) : "/logo.svg"} className="h-8" />
                         <img src="/flame-grilled.svg" className="h-2 mt-4" />
                         <div className="flex row gap-4 mt-4">
-                            <a href="https://www.facebook.com/letsgofranggo/" target={'_blank'} rel='noreferrer'>
+                            <a href="https://www.facebook.com/franggoofficial" target={'_blank'} rel='noreferrer'>
                                 <img src="/social/facebook.svg" className=" cursor-pointer hover:scale-105 active:scale-95 transition-all h-8" />
                             </a>
                             <a href="https://www.instagram.com/letsgofranggo/" target={'_blank'} rel='noreferrer'>
