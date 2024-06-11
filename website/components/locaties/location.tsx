@@ -44,13 +44,13 @@ export const Location: FC<{
                                         <p className="text-base font-light mb-2">{location.description}</p>
                                     </div>
                                 ) }
-                                <div>
-                                    <p className="text-base underline font-light">{location.street}</p>
-                                    <p className="text-base underline font-light flex gap-2">
+                                <a href={`https://maps.google.com/maps?q=${location.street}-${location.city}`} className="cursor-pointer" target="_blank" rel="noreferrer">
+                                    <p className="text-base pointer-events-none underline font-light">{location.street}</p>
+                                    <p className="text-base pointer-events-none underline font-light flex gap-2">
                                         {`${location.zip}, ${location.city}`} 
                                         <img src="/icons/external-link.svg" width={11} height={10} alt="external link icon" />
                                     </p>
-                                </div>
+                                </a>
                                 <div>
                                     <a href={`tel:${location.phone}`} className="cursor-pointer underline text-base font-light">{location.phone}</a>
                                 </div>
