@@ -65,10 +65,10 @@ export const Footer: FC<{
                                 return (
                                     <div key={i} className="flex flex-col gap-2">
                                         <p className="font-medium font-heading text-xl">{location.title}</p>
-                                        <div>
+                                        <a href={`https://maps.google.com/maps?q=${location.street}-${location.city}`} className="cursor-pointer" target="_blank" rel="noreferrer">
                                             <p>{location.street}</p>
                                             <p>{location.zip}</p>
-                                        </div>
+                                        </a>
                                         <div>
                                             {/* opening times is not a string[]! */}
                                             {/* <p>{location.openingTimes.map((time, i) => {
