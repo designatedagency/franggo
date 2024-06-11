@@ -15,6 +15,10 @@ export default {
             name: "info",
             title: "Information",
         },
+        {
+            name: "cta",
+            title: "CTA",
+        },
     ],
     fields: [
         // SEO
@@ -53,6 +57,14 @@ export default {
             type: "array",
             of: [{ type: "doubleBlock" }],
             group: "info",
+        },
+         // cta
+         {
+            name: "ctaBlock",
+            title: "Call to action block",
+            description: "Setup the call to action block for the page",
+            type: "ctaBlock",
+            group: "cta",
         },
     ],
 }

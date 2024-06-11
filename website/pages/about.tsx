@@ -2,7 +2,7 @@ import { GetStaticPropsContext } from "next"
 import Link from "next/link"
 import React from "react"
 import { Block } from "../components/core/block"
-import { Button } from '../components/core/button'
+import { CTA } from "../components/cta"
 import { Footer } from "../components/core/footer"
 import { Header } from '../components/core/header'
 import { Meta } from "../components/core/meta"
@@ -43,6 +43,8 @@ export default function AboutPage(props: SanityNextStaticProps<PageProps>) {
                     )
                 })}
             </Block>
+
+            <CTA small ctaBlock={data.page.ctaBlock} />
 
             < Footer locations={props.data.locations} global={data.global} />
 
