@@ -25,12 +25,20 @@ export const CTA: FC<{
                             <p className="font-light text-base">{ctaBlock?.description}</p>
                         </div>
                         <div className="flex flex-col gap-2.5 w-full">
-                            <a className="w-full" target={ctaBlock?.button_one?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock?.button_one?.link ? ctaBlock?.button_one.link : "#zc-action-open"}>
-                                <Button fullsize textTransform="uppercase" variant="primary">{ctaBlock?.button_one?.name ? ctaBlock?.button_one?.name : "Reserveren"}</Button>
-                            </a>
-                            <a className="w-full" target={ctaBlock?.button_two?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock?.button_two?.link ? ctaBlock?.button_two.link : "#zc-action-open"}>
-                                <Button fullsize textTransform="uppercase" variant="secondary">{ctaBlock?.button_two?.name ? ctaBlock?.button_two?.name : "Reserveren"}</Button>
-                            </a>
+                            {ctaBlock?.button_one?.link ? (
+                                <a className="w-full" target={ctaBlock.button_one.link.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock.button_one.link}>
+                                    <Button fullsize textTransform="uppercase" variant="primary">{ctaBlock.button_one.name || "Reserveren"}</Button>
+                                </a>
+                            ) : (
+                                <Button data-zc-action="open" fullsize textTransform="uppercase" variant="primary">{ctaBlock?.button_one?.name || "Reserveren"}</Button>
+                            )}
+                            {ctaBlock?.button_two?.link ? (
+                                <a className="w-full" target={ctaBlock.button_two.link.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={ctaBlock.button_two.link}>
+                                    <Button fullsize textTransform="uppercase" variant="secondary">{ctaBlock.button_two.name || "Reserveren"}</Button>
+                                </a>
+                            ) : (
+                                <Button data-zc-action="open" fullsize textTransform="uppercase" variant="secondary">{ctaBlock?.button_two?.name || "Reserveren"}</Button>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -20,12 +20,20 @@ export const Hero: FC<{
                     <div className="wrapper flex flex-col gap-9 justify-center">
                         <img className="w-full mx-auto md:w-[70%] object-contain" src={imageUrlFor(logo)} />
                         <div className="buttons-wrapper flex gap-4 flex-wrap justify-center">
-                            <a target={primaryButton?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={primaryButton?.link ? primaryButton.link : "#zc-action-open"}>
-                                <HtmlButton textTransform="uppercase" variant="primary">{primaryButton?.name ? primaryButton?.name : "Reserveren"}</HtmlButton>
-                            </a>
-                            <a target={secondaryButton?.link?.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={secondaryButton?.link ? secondaryButton.link : "#zc-action-open"}>
-                                <HtmlButton textTransform="uppercase" variant="secondary">{secondaryButton?.name ? secondaryButton?.name : "Reserveren"}</HtmlButton>
-                            </a>
+                            {primaryButton?.link ? (
+                                <a target={primaryButton.link.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={primaryButton.link}>
+                                    <HtmlButton textTransform="uppercase" variant="primary">{primaryButton.name || "Reserveren"}</HtmlButton>
+                                </a>
+                            ) : (
+                                <HtmlButton data-zc-action="open" textTransform="uppercase" variant="primary">{primaryButton?.name || "Reserveren"}</HtmlButton>
+                            )}
+                            {secondaryButton?.link ? (
+                                <a target={secondaryButton.link.includes("http") ? "_blank" : "_self"} rel="noreferrer" href={secondaryButton.link}>
+                                    <HtmlButton textTransform="uppercase" variant="secondary">{secondaryButton.name || "Reserveren"}</HtmlButton>
+                                </a>
+                            ) : (
+                                <HtmlButton data-zc-action="open" textTransform="uppercase" variant="secondary">{secondaryButton?.name || "Reserveren"}</HtmlButton>
+                            )}
                         </div>
                     </div>
                     <div className="absolute w-[130px] h-[130px] left-0 -bottom-2">

@@ -105,9 +105,7 @@ export const Header: FC<{
                             </Button>
                         </Link>
 
-                        <a href="#zc-action-open">
-                            <Button className="w-auto text-3xl " variant="primary">Reserve</Button>
-                        </a>
+                        <Button data-zc-action="open" className="w-auto text-3xl " variant="primary">Reserve</Button>
                     </div>
 
                 </div>
@@ -122,9 +120,7 @@ export const Header: FC<{
                             </p>
                         </Button>
                     </Link>
-                    <a href="#zc-action-open">
-                        <Button className="w-auto text-xl" variant="primary">Reserve</Button>
-                    </a>
+                    <Button data-zc-action="open" className="w-auto text-xl" variant="primary">Reserve</Button>
                 </div>
             </div>
         </header>
