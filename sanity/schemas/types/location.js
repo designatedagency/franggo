@@ -59,12 +59,6 @@ export default {
             type: "string",
         },
         {
-            name: "reservationUrl",
-            title: "Reservation URL (Zenchef)",
-            description: "Direct Zenchef booking link for this location, e.g. https://bookings.zenchef.com/results?rid=385673. Leave empty for walk-in-only locations (no reservation button will be shown).",
-            type: "string",
-        },
-        {
             name: "openingTimes",
             title: "Opening times",
             description: "Opening times for the restaurant",

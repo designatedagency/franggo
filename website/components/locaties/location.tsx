@@ -8,6 +8,17 @@ import { imageUrlFor } from "../../lib/helpers/sanity-helpers";
 import { LocationType } from "../../lib/types/types/location.type";
 import { Button } from "../core/button";
 
+// Zenchef reservation destinations per venue (West and Oost only, De Pijp is walk-in).
+const RESERVATION_URLS: { match: string; url: string }[] = [
+    { match: "west", url: "https://bookings.zenchef.com/results?rid=385673" },
+    { match: "oost", url: "https://bookings.zenchef.com/results?rid=386075" },
+];
+
+function getReservationUrl(title: string) {
+    const normalized = title.toLowerCase();
+    return RESERVATION_URLS.find(({ match }) => normalized.includes(match))?.url;
+}
+
 export const Location: FC<{
     location: LocationType;
     hasDescription?: boolean;
@@ -66,7 +77,7 @@ export const Location: FC<{
                                         </div>
                                         : 
                                         <div className="flex flex-col gap-2 w-full">
-                                            <a href={location.reservationUrl} className="w-full">
+                                            <a href={getReservationUrl(location.title)} className="w-full">
                                                 <Button variant="primary" fullsize>BOOK A TABLE</Button>
                                             </a>
                                         </div>
