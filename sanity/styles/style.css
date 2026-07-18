@@ -1,0 +1,16 @@
+:root {
+    /* Brand colors */
+    --brand-primary: #f37524;
+    --brand-primary--inverted: #000;
+    --brand-secondary: #000;
+    --brand-secondary--inverted: #f37524;
+    --card-bg-color: #f37524;
+    --card-fg-color: #fff;
+    --card-border-color: #1f7798;
+    /* Typography */
+    --font-size-base: 18px;
+    --text-color: #fff;
+    /* Main Navigation */
+    --main-navigation-color: var(--brand-secondary);
+    --main-navigation-color--inverted: var(--brand-secondary--inverted);
+}
