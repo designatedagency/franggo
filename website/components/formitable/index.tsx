@@ -18,3 +18,4 @@ export const Formitable: FC<React.HtmlHTMLAttributes<HTMLDivElement>> = (props) 
       } }
     />
   </div>)
+}
